@@ -1,0 +1,9 @@
+# Robots.txt pour NOVA Business
+# Site web : https://www.nova-business.fr
+# Dernière mise à jour : 09/07/2025
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://nova-business.fr/sitemap.xml

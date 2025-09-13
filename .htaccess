@@ -1,0 +1,18 @@
+RewriteEngine On
+
+# Redirect old URLs to new shorter URLs
+RewriteRule ^conditions-generales-vente\.html$ /conditions-vente [R=301,L]
+RewriteRule ^politique-confidentialite\.html$ /confidentialite [R=301,L]
+
+# Redirect /index to / for homepage
+RewriteRule ^index/?$ / [R=301,L]
+
+# Remove .html extension from URLs (redirect .html to clean URLs)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.html[\?\ ]
+RewriteRule ^([^\ ]+)\.html$ /$1 [R=301,L]
+
+# Internal rewrite: serve .html files for clean URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.*)$ $1.html [L]
