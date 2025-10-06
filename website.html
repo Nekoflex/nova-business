@@ -101,11 +101,6 @@
       type="text/css"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
     />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-    />
 
     <!-- Styles spécifiques déplacés vers assets/css/website-specific.css pour optimiser les performances -->
 
@@ -170,7 +165,7 @@
           >
             <img
               src="assets/img/Nova_business_logo.webp"
-              alt="NOVA Business - Création de site web"
+              alt="NOVA Business - Audit SEO"
               class="logo-image"
             />
           </a>
@@ -178,11 +173,69 @@
           <!-- Navigation principale -->
           <nav class="main-navigation" aria-label="Navigation principale">
             <ul class="nav-list">
-              <li class="nav-item">
-                <a href="audit-seo.html" class="nav-link">Audit SEO</a>
-              </li>
-              <li class="nav-item">
-                <a href="website.html" class="nav-link active">Site Web</a>
+              <li class="nav-item nav-item--dropdown">
+                <a
+                  href="#"
+                  class="nav-link nav-link--dropdown"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  Services
+                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a
+                      href="audit-seo.html"
+                      class="dropdown-link"
+                      role="menuitem"
+                    >
+                      Audit SEO
+                      <span class="dropdown-description"
+                        >Votre site analysé par un expert SEO</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="website.html"
+                      class="dropdown-link active"
+                      role="menuitem"
+                    >
+                      Création de Site Web
+                      <span class="dropdown-description"
+                        >Générez plus de prospects et de ventes grâce à votre
+                        site optimisé en SEO</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="articles.html"
+                      class="dropdown-link"
+                      role="menuitem"
+                    >
+                      Articles de Blog SEO
+                      <span class="dropdown-description"
+                        >Boostez votre référencement avec nos Articles de blog
+                        SEO</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="contenus.html"
+                      class="dropdown-link"
+                      role="menuitem"
+                    >
+                      Community Management
+                      <span class="dropdown-description"
+                        >Soyez visible sur les réseaux et créez des leads
+                        qualifiés</span
+                      >
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
                 <a href="tarification.html" class="nav-link">Tarification</a>
@@ -193,23 +246,19 @@
             </ul>
           </nav>
 
-          <!-- Actions du header -->
           <div class="header-actions">
-            <!-- Bouton Contact Desktop -->
             <a
               href="contact.html"
               class="contact-btn contact-btn--desktop"
-              aria-label="Nous contacter pour un devis"
+              aria-label="Formulaire de contact"
             >
               Nous contacter
             </a>
-
-            <!-- Bouton Contact Mobile -->
             <a
               href="contact.html"
               class="contact-btn contact-btn--mobile"
-              title="Contacter un conseiller"
-              aria-label="Contacter un conseiller"
+              title="Contacter un conseiller SEO"
+              aria-label="Contacter un conseiller SEO"
             >
               <svg
                 width="20"
@@ -229,15 +278,13 @@
               </svg>
             </a>
 
-            <!-- Toggle menu mobile -->
+            <!-- Toggle Menu Mobile -->
             <button
               class="mobile-toggle"
               aria-label="Ouvrir le menu mobile"
               aria-expanded="false"
               aria-controls="mobile-navigation"
             >
-              <span class="mobile-toggle__line" aria-hidden="true"></span>
-              <span class="mobile-toggle__line" aria-hidden="true"></span>
               <span class="mobile-toggle__line" aria-hidden="true"></span>
             </button>
           </div>
@@ -254,17 +301,78 @@
           <li class="mobile-nav-item">
             <a href="index.html" class="mobile-nav-link">Accueil</a>
           </li>
-          <li class="mobile-nav-item">
-            <a href="audit-seo.html" class="mobile-nav-link">Audit SEO</a>
-          </li>
-          <li class="mobile-nav-item">
-            <a href="website.html" class="mobile-nav-link active">Site Web</a>
+          <li class="mobile-nav-item mobile-nav-item--dropdown">
+            <a
+              href="#"
+              class="mobile-nav-link mobile-nav-link--dropdown"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              Services
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <ul class="mobile-dropdown-menu" role="menu">
+              <li>
+                <a
+                  href="audit-seo.html"
+                  class="mobile-dropdown-link"
+                  role="menuitem"
+                >
+                  Audit SEO
+                  <span class="mobile-dropdown-description"
+                    >Votre site analysé par un expert SEO</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="website.html"
+                  class="mobile-dropdown-link active"
+                  role="menuitem"
+                >
+                  Création de Site Web
+                  <span class="mobile-dropdown-description"
+                    >Générez plus de prospects et de ventes grâce à votre site
+                    optimisé en SEO</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="articles.html"
+                  class="mobile-dropdown-link"
+                  role="menuitem"
+                >
+                  Articles de Blog SEO
+                  <span class="mobile-dropdown-description"
+                    >Boostez votre référencement avec nos Articles de blog
+                    SEO</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="contenus.html"
+                  class="mobile-dropdown-link"
+                  role="menuitem"
+                >
+                  Community Management
+                  <span class="mobile-dropdown-description"
+                    >Soyez visible sur les réseaux et créez des leads
+                    qualifiés</span
+                  >
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="mobile-nav-item">
             <a href="tarification.html" class="mobile-nav-link">Tarification</a>
           </li>
           <li class="mobile-nav-item">
             <a href="a-propos.html" class="mobile-nav-link">À propos</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
           </li>
         </ul>
       </nav>
@@ -322,32 +430,30 @@
       <section id="why-nova" class="section" aria-labelledby="why-nova-heading">
         <div class="intro-service-container">
           <h2 id="why-nova-heading" class="intro-service-title">
-            Des solutions web adaptées à chaque besoin
+            Votre site web : plus qu'une vitrine, un moteur de croissance.
           </h2>
           <div class="intro-service-content">
             <p>
-              Vous cherchez à créer un site performant, moderniser un site
-              existant ou concevoir une page qui convertit vraiment&nbsp;? Nos
-              services sont pensés pour répondre à chaque objectif, qu’il
-              s’agisse de visibilité, de crédibilité ou de génération de leads.
+              Un site web performant est aujourd'hui votre meilleur commercial.
+              Il travaille 24h/24 pour asseoir votre crédibilité, attirer des
+              prospects et générer des opportunités. Chez NOVA Business, nous ne
+              créons pas de simples sites : nous construisons des outils
+              digitaux sur-mesure.
             </p>
             <p>
-              Chaque solution est adaptée à votre profil&nbsp;: entrepreneur,
-              PME, indépendant ou porteur de projet. Chez NOVA Business, nous
-              développons des sites 100&nbsp;% sur-mesure, rapides, responsives
-              et optimisés pour le référencement naturel dès leur conception.
+              Que vous ayez besoin d'une vitrine élégante, d'une boutique
+              e-commerce qui convertit ou d'une refonte complète, chaque projet
+              est développé avec un code propre, une performance optimale et un
+              SEO intégré dès la première ligne.
             </p>
             <p>
-              Explorez ci-dessous nos offres de création web, avec une
-              navigation claire et interactive pour découvrir celle qui
-              correspond le mieux à vos enjeux.
+              Découvrez ci-dessous nos différentes expertises pour donner vie à
+              votre projet.
             </p>
           </div>
         </div>
       </section>
-      <!-- Section Services Web -->
       <section id="services-web" class="section-tabs-scroll-snap">
-        <h2 class="sr-only">Types de sites web disponibles</h2>
         <nav
           class="scroll-snap-nav"
           role="tablist"
@@ -387,7 +493,7 @@
             aria-controls="panel-4"
             class="tabs-nav-item"
           >
-            Refonte Complète ou Partielle
+            Refonte
           </button>
           <button
             id="tab-5"
@@ -421,8 +527,8 @@
             <h3>Site Vitrine</h3>
             <p>
               Vous avez besoin d’un site qui reflète votre image, inspire
-              confiance et génère vos premiers clients ? Le site vitrine est la
-              solution idéale pour marquer votre présence en ligne.
+              confiance et génère vos premiers clients&nbsp;? Le site vitrine
+              est la solution idéale pour marquer votre présence en ligne.
             </p>
             <ul class="feature-list">
               <li>Design moderne et responsive</li>
@@ -450,8 +556,8 @@
           >
             <h3>Site One-Page Impactant</h3>
             <p>
-              Vous cherchez à aller droit au but ? Le site one-page est parfait
-              pour concentrer l’essentiel sur une seule page, sans perte
+              Vous cherchez à aller droit au but&nbsp;? Le site one-page est
+              parfait pour concentrer l’essentiel sur une seule page, sans perte
               d’attention ni distraction.
             </p>
             <ul class="feature-list">
@@ -481,8 +587,8 @@
             <h3>Boutique E-commerce</h3>
             <p>
               Vous souhaitez vendre vos produits en ligne, facilement et en
-              toute confiance ? Une boutique e-commerce bien conçue transforme
-              vos visiteurs en acheteurs.
+              toute confiance&nbsp;? Une boutique e-commerce bien conçue
+              transforme vos visiteurs en acheteurs.
             </p>
             <ul class="feature-list">
               <li>Catalogue produits avec filtres</li>
@@ -493,8 +599,8 @@
               <li>SEO produit et vitesse de chargement</li>
             </ul>
             <p>
-              NOVA Business développe votre e-commerce sans CMS imposé&nbsp;: un site
-              léger, évolutif, sur-mesure, pensé pour la performance et la
+              NOVA Business développe votre e-commerce sans CMS imposé&nbsp;: un
+              site léger, évolutif, sur-mesure, pensé pour la performance et la
               conversion.
             </p>
           </section>
@@ -511,8 +617,8 @@
             <h3>Refonte Complète ou Partielle</h3>
             <p>
               Votre site est lent, mal affiché sur mobile, ou plus au goût du
-              jour ? Une refonte web bien menée vous permet de repartir sur des
-              bases solides.
+              jour&nbsp;? Une refonte web bien menée vous permet de repartir sur
+              des bases solides.
             </p>
             <ul class="feature-list">
               <li>Audit SEO et technique inclus</li>
@@ -540,9 +646,9 @@
           >
             <h3>Landing Page SEO</h3>
             <p>
-              Besoin d’une page qui attire, convainc et convertit ? La landing
-              page SEO cible une intention précise pour générer des leads
-              qualifiés.
+              Besoin d’une page qui attire, convainc et convertit&nbsp;? La
+              landing page SEO cible une intention précise pour générer des
+              leads qualifiés.
             </p>
             <ul class="feature-list">
               <li>Optimisation mots-clés stratégiques</li>
@@ -554,8 +660,8 @@
             </ul>
             <p>
               Chez NOVA Business, chaque landing page est pensée comme un outil
-              marketing&nbsp;: rapide, claire, mesurable, et parfaitement alignée
-              avec vos objectifs.
+              marketing&nbsp;: rapide, claire, mesurable, et parfaitement
+              alignée avec vos objectifs.
             </p>
           </section>
 
@@ -570,7 +676,7 @@
           >
             <h3>Solution Sur-mesure</h3>
             <p>
-              Vous avez un besoin digital qui ne rentre pas dans une case ?
+              Vous avez un besoin digital qui ne rentre pas dans une case&nbsp;?
               L’approche sur-mesure est faite pour vous, que ce soit pour un
               outil métier, un extranet ou une plateforme spécifique.
             </p>
@@ -592,7 +698,7 @@
       </section>
 
       <!-- Section Approche -->
-      <section id="approche">
+      <section class="approche">
         <h2 class="section-title-custom">Notre méthode de travail</h2>
         <ul class="timeline-new">
           <li style="--accent-color: #5d9cec">
@@ -650,7 +756,7 @@
       <section id="value" class="section" aria-labelledby="avantages-heading">
         <div class="avantages-container">
           <h2 id="avantages-heading" class="section-title-custom">
-            Pourquoi choisir NOVA Business pour votre site ?
+            Pourquoi choisir NOVA Business pour votre site&nbsp;?
           </h2>
           <ul class="avantages-list">
             <li class="avantages-item">
@@ -716,7 +822,7 @@
               ></i>
               <div class="avantages-text">
                 <strong>Facilité de paiement</strong> – Vous souhaitez avoir le
-                meilleur, mais votre budget est limité ? Nous proposons des
+                meilleur, mais votre budget est limité&nbsp;? Nous proposons des
                 solutions de paiement flexibles qui s'adaptent à vos besoins.
               </div>
             </li>
@@ -765,8 +871,9 @@
               </div>
 
               <p class="card-target">
-                <strong>Pour qui ?</strong>Entrepreneurs, startups et petites
-                entreprises qui veulent une présence web efficace et directe.
+                <strong>Pour qui&nbsp;?</strong>Entrepreneurs, startups et
+                petites entreprises qui veulent une présence web efficace et
+                directe.
               </p>
 
               <div class="card-footer">
@@ -824,7 +931,7 @@
               </div>
 
               <p class="card-target">
-                <strong>Pour qui ?</strong> TPE, PME, indépendants et
+                <strong>Pour qui&nbsp;?</strong> TPE, PME, indépendants et
                 professions libérales qui veulent une présence web
                 professionnelle.
               </p>
@@ -874,8 +981,9 @@
               </div>
 
               <p class="card-target">
-                <strong>Pour qui ?</strong> Commerçants, artisans et entreprises
-                qui veulent vendre en ligne avec une solution professionnelle.
+                <strong>Pour qui&nbsp;?</strong> Commerçants, artisans et
+                entreprises qui veulent vendre en ligne avec une solution
+                professionnelle.
               </p>
 
               <div class="card-footer">
@@ -921,8 +1029,8 @@
               </div>
 
               <p class="card-target">
-                <strong>Pour qui ?</strong> Entreprises avec un site existant
-                qui veulent moderniser leur image et améliorer leurs
+                <strong>Pour qui&nbsp;?</strong> Entreprises avec un site
+                existant qui veulent moderniser leur image et améliorer leurs
                 performances.
               </p>
 
@@ -971,7 +1079,7 @@
               </div>
 
               <p class="card-target">
-                <strong>Pour qui ?</strong> Marketeurs et entreprises qui
+                <strong>Pour qui&nbsp;?</strong> Marketeurs et entreprises qui
                 veulent des pages de conversion performantes.
               </p>
 
@@ -1019,7 +1127,7 @@
               </div>
 
               <p class="card-target">
-                <strong>Pour qui ?</strong> Entreprises avec des besoins
+                <strong>Pour qui&nbsp;?</strong> Entreprises avec des besoins
                 spécifiques nécessitant un développement sur-mesure.
               </p>
 
@@ -1068,7 +1176,7 @@
                   >
                     <span class="faq-question-text"
                       >Combien coûte la création d'un site web avec NOVA
-                      Business ?</span
+                      Business&nbsp;?</span
                     >
                     <svg
                       class="faq-chevron"
@@ -1149,7 +1257,8 @@
                     aria-controls="faq-3"
                   >
                     <span class="faq-question-text"
-                      >Est-ce que le site sera bien référencé sur Google ?</span
+                      >Est-ce que le site sera bien référencé sur
+                      Google&nbsp;?</span
                     >
                     <svg
                       class="faq-chevron"
@@ -1171,7 +1280,7 @@
                   >
                     <p>
                       Tous nos sites sont conçus pour bien performer sur Google
-                     &nbsp;: structure technique propre, balises optimisées,
+                      &nbsp;: structure technique propre, balises optimisées,
                       chargement rapide et design responsive.
                     </p>
                     <p>
@@ -1194,7 +1303,8 @@
                     aria-controls="faq-4"
                   >
                     <span class="faq-question-text"
-                      >Est-ce que vous utilisez des CMS comme WordPress ?</span
+                      >Est-ce que vous utilisez des CMS comme
+                      WordPress&nbsp;?</span
                     >
                     <svg
                       class="faq-chevron"
@@ -1231,7 +1341,7 @@
                     aria-controls="faq-5"
                   >
                     <span class="faq-question-text"
-                      >Mon site sera-t-il adapté au mobile ?</span
+                      >Mon site sera-t-il adapté au mobile&nbsp;?</span
                     >
                     <svg
                       class="faq-chevron"
@@ -1274,7 +1384,7 @@
                   >
                     <span class="faq-question-text">
                       Proposez-vous un accompagnement après la mise en ligne
-                      ?</span
+                      &nbsp;?</span
                     >
                     <svg
                       class="faq-chevron"
@@ -1312,7 +1422,7 @@
                   >
                     <span class="faq-question-text"
                       >Puis-je vous confier la refonte d’un site existant
-                      ?</span
+                      &nbsp;?</span
                     >
                     <svg
                       class="faq-chevron"
@@ -1346,7 +1456,7 @@
       </section>
 
       <!-- Section CTA Banner -->
-      <section id="cta-banner" class="section-cta">
+      <section class="cta-banner" class="section-cta">
         <div class="container cta-banner-container">
           <div class="cta-banner-content" data-animate="zoom-in">
             <h2 class="h2 cta-banner-title" id="cta-banner-heading">
@@ -1372,7 +1482,7 @@
           <div class="footer-brand-block">
             <img
               src="assets/img/Nova_business_logo.webp"
-              alt="NOVA Business"
+              alt="NOVA Business logo"
               class="footer-logo"
               loading="lazy"
             />
@@ -1439,7 +1549,17 @@
           <ul class="footer-links">
             <li><a href="index.html" class="footer-link">Accueil</a></li>
             <li><a href="audit-seo.html" class="footer-link">Audit SEO</a></li>
-            <li><a href="website.html" class="footer-link">Site Web</a></li>
+            <li><a href="website.html" class="footer-link">Création de Site Web</a></li>
+            <li>
+              <a href="articles.html" class="footer-link"
+                >Articles de Blog SEO</a
+              >
+            </li>
+            <li>
+              <a href="contenus.html" class="footer-link"
+                >Community Management</a
+              >
+            </li>
             <li>
               <a href="tarification.html" class="footer-link">Tarification</a>
             </li>

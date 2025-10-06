@@ -187,18 +187,19 @@
 
   <body>
     <!-- Header Principal -->
+    <!-- Header Principal -->
     <header class="site-header">
       <div class="header-content-wrapper">
         <div class="header-wrapper">
           <!-- Logo -->
           <a
-            href="/"
+            href="index.html"
             class="site-logo"
             aria-label="Retour à l'accueil NOVA Business"
           >
             <img
               src="assets/img/Nova_business_logo.webp"
-              alt="NOVA Business logo - Audit SEO"
+              alt="NOVA Business - Audit SEO"
               class="logo-image"
             />
           </a>
@@ -206,11 +207,69 @@
           <!-- Navigation principale -->
           <nav class="main-navigation" aria-label="Navigation principale">
             <ul class="nav-list">
-              <li class="nav-item">
-                <a href="audit-seo.html" class="nav-link">Audit SEO</a>
-              </li>
-              <li class="nav-item">
-                <a href="website.html" class="nav-link">Site Web</a>
+              <li class="nav-item nav-item--dropdown">
+                <a
+                  href="#"
+                  class="nav-link nav-link--dropdown"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  Services
+                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a
+                      href="audit-seo.html"
+                      class="dropdown-link"
+                      role="menuitem"
+                    >
+                      Audit SEO
+                      <span class="dropdown-description"
+                        >Votre site analysé par un expert SEO</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="website.html"
+                      class="dropdown-link"
+                      role="menuitem"
+                    >
+                      Création de Site Web
+                      <span class="dropdown-description"
+                        >Générez plus de prospects et de ventes grâce à votre
+                        site optimisé en SEO</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="articles.html"
+                      class="dropdown-link"
+                      role="menuitem"
+                    >
+                      Articles de Blog SEO
+                      <span class="dropdown-description"
+                        >Boostez votre référencement avec nos Articles de blog
+                        SEO</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="contenus.html"
+                      class="dropdown-link"
+                      role="menuitem"
+                    >
+                      Community Management
+                      <span class="dropdown-description"
+                        >Soyez visible sur les réseaux et créez des leads
+                        qualifiés</span
+                      >
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
                 <a href="tarification.html" class="nav-link">Tarification</a>
@@ -221,18 +280,14 @@
             </ul>
           </nav>
 
-          <!-- Actions du header -->
           <div class="header-actions">
-            <!-- Bouton Contact Desktop -->
             <a
               href="contact.html"
               class="contact-btn contact-btn--desktop"
-              aria-label="Nous contacter pour un audit SEO"
+              aria-label="Formulaire de contact"
             >
               Nous contacter
             </a>
-
-            <!-- Bouton Contact Mobile -->
             <a
               href="contact.html"
               class="contact-btn contact-btn--mobile"
@@ -257,15 +312,13 @@
               </svg>
             </a>
 
-            <!-- Toggle menu mobile -->
+            <!-- Toggle Menu Mobile -->
             <button
               class="mobile-toggle"
               aria-label="Ouvrir le menu mobile"
               aria-expanded="false"
               aria-controls="mobile-navigation"
             >
-              <span class="mobile-toggle__line" aria-hidden="true"></span>
-              <span class="mobile-toggle__line" aria-hidden="true"></span>
               <span class="mobile-toggle__line" aria-hidden="true"></span>
             </button>
           </div>
@@ -282,17 +335,78 @@
           <li class="mobile-nav-item">
             <a href="index.html" class="mobile-nav-link active">Accueil</a>
           </li>
-          <li class="mobile-nav-item">
-            <a href="audit-seo.html" class="mobile-nav-link">Audit SEO</a>
-          </li>
-          <li class="mobile-nav-item">
-            <a href="website.html" class="mobile-nav-link">Site Web</a>
+          <li class="mobile-nav-item mobile-nav-item--dropdown">
+            <a
+              href="#"
+              class="mobile-nav-link mobile-nav-link--dropdown"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              Services
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <ul class="mobile-dropdown-menu" role="menu">
+              <li>
+                <a
+                  href="audit-seo.html"
+                  class="mobile-dropdown-link"
+                  role="menuitem"
+                >
+                  Audit SEO
+                  <span class="mobile-dropdown-description"
+                    >Votre site analysé par un expert SEO</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="website.html"
+                  class="mobile-dropdown-link"
+                  role="menuitem"
+                >
+                  Création de Site Web
+                  <span class="mobile-dropdown-description"
+                    >Générez plus de prospects et de ventes grâce à votre site
+                    optimisé en SEO</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="articles.html"
+                  class="mobile-dropdown-link"
+                  role="menuitem"
+                >
+                  Articles de Blog SEO
+                  <span class="mobile-dropdown-description"
+                    >Boostez votre référencement avec nos Articles de blog
+                    SEO</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="contenus.html"
+                  class="mobile-dropdown-link"
+                  role="menuitem"
+                >
+                  Community Management
+                  <span class="mobile-dropdown-description"
+                    >Soyez visible sur les réseaux et créez des leads
+                    qualifiés</span
+                  >
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="mobile-nav-item">
             <a href="tarification.html" class="mobile-nav-link">Tarification</a>
           </li>
           <li class="mobile-nav-item">
             <a href="a-propos.html" class="mobile-nav-link">À propos</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
           </li>
         </ul>
       </nav>
@@ -304,11 +418,11 @@
       <section class="hero-section" aria-labelledby="hero-title">
         <div class="hero-container">
           <h1 id="hero-title" class="hero-title">
-            Améliorer la visibilité de votre site web
+            Améliorer la visibilité de&nbsp;votre&nbsp;site&nbsp;web
           </h1>
 
           <h2 class="hero-subtitle">
-            + 100 critères SEO analysés par un expert
+            + 100 critères SEO analysés par&nbsp;un&nbsp;expert
           </h2>
 
           <div class="so-container">
@@ -381,7 +495,8 @@
           <div>
             <p class="hero-description">
               Obtenez un <strong>audit SEO gratuit</strong> de votre site web en
-              <strong>moins d'une heure</strong>. Entrez l'URL de votre site et votre adresse e-mail ci-dessus.
+              <strong>moins d'une heure</strong>. Entrez l'URL de votre site et
+              votre adresse e-mail ci-dessus.
             </p>
           </div>
 
@@ -490,10 +605,10 @@
             </p>
             <p>
               Chez NOVA Business, nous vous proposons un accompagnement complet
-             &nbsp;: optimisation technique, amélioration de vos contenus, rédaction
-              d'articles de blog ciblés, et gestion de vos réseaux sociaux
-              professionnels pour faire du référencement un vrai moteur de votre
-              activité.
+              &nbsp;: optimisation technique, amélioration de vos contenus,
+              rédaction d'articles de blog ciblés, et gestion de vos réseaux
+              sociaux professionnels pour faire du référencement un vrai moteur
+              de votre activité.
             </p>
             <a href="#" class="btn-dark" id="pdf-audit-trigger"
               >Voir un audit</a
@@ -549,7 +664,8 @@
                 <strong>Générez plus de clients</strong>
                 – Transformez votre site en aimant à prospects. Utilisez nos
                 offres d'accompagnement SEO pour acquérir plus de clients
-                directement et augmenter votre chiffre d'affaires depuis votre site web.
+                directement et augmenter votre chiffre d'affaires depuis votre
+                site web.
               </div>
             </li>
           </ul>
@@ -807,7 +923,7 @@
       <section id="why-nova" class="section" aria-labelledby="why-nova-heading">
         <div class="why-nova-container">
           <h2 id="why-nova-heading" class="why-nova-title">
-            Pourquoi NOVA Business ?
+            Pourquoi NOVA Business&nbsp;?
           </h2>
 
           <div class="why-nova-content">
@@ -815,9 +931,9 @@
               Obtenir le classement de votre site web dans Google est plus
               difficile et plus compétitif que jamais. Il existe de nombreux
               facteurs tels que le contenu de la page, la performance, les
-              facteurs sociaux et le profil de vos backlinks (liens retour) que les moteurs de
-              recherche utilisent pour déterminer quels sites doivent être
-              classés au plus haut niveau.
+              facteurs sociaux et le profil de vos backlinks (liens retour) que
+              les moteurs de recherche utilisent pour déterminer quels sites
+              doivent être classés au plus haut niveau.
             </p>
 
             <p>
@@ -856,11 +972,11 @@
         </div>
       </section>
       <!-- Section CTA Banner -->
-      <section id="cta-banner">
+      <section class="cta-banner cta-index-banner">
         <div class="container cta-banner-container">
           <div class="cta-banner-content" data-animate="zoom-in">
             <h2 class="h2 cta-banner-title" id="cta-banner-heading">
-              Qu'attendez-vous ?<br />
+              Qu'attendez-vous&nbsp;?<br />
               Recevez gratuitement votre audit SEO
             </h2>
             <a
@@ -951,10 +1067,10 @@
           <ul class="footer-links">
             <li><a href="index.html" class="footer-link">Accueil</a></li>
             <li><a href="audit-seo.html" class="footer-link">Audit SEO</a></li>
-            <li><a href="website.html" class="footer-link">Site Web</a></li>
-            <li>
-              <a href="tarification.html" class="footer-link">Tarification</a>
-            </li>
+            <li><a href="website.html" class="footer-link">Création de Site Web</a></li>
+            <li><a href="articles.html" class="footer-link">Articles de Blog SEO</a></li>
+            <li><a href="contenus.html" class="footer-link">Community Management</a></li>
+            <li><a href="tarification.html" class="footer-link">Tarification</a></li>
             <li><a href="a-propos.html" class="footer-link">À propos</a></li>
             <li><a href="contact.html" class="footer-link">Contact</a></li>
           </ul>

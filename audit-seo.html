@@ -154,8 +154,6 @@
         ]
       }
     </script>
-      }
-    </script>
 
     <script type="application/ld+json">
       {
@@ -321,6 +319,7 @@
 
   <body class="page-audit-seo">
     <!-- Header Principal -->
+    <!-- Header Principal -->
     <header class="site-header">
       <div class="header-content-wrapper">
         <div class="header-wrapper">
@@ -340,11 +339,69 @@
           <!-- Navigation principale -->
           <nav class="main-navigation" aria-label="Navigation principale">
             <ul class="nav-list">
-              <li class="nav-item">
-                <a href="audit-seo.html" class="nav-link active">Audit SEO</a>
-              </li>
-              <li class="nav-item">
-                <a href="website.html" class="nav-link">Site Web</a>
+              <li class="nav-item nav-item--dropdown">
+                <a
+                  href="#"
+                  class="nav-link nav-link--dropdown"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  Services
+                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a
+                      href="audit-seo.html"
+                      class="dropdown-link active"
+                      role="menuitem"
+                    >
+                      Audit SEO
+                      <span class="dropdown-description"
+                        >Votre site analysé par un expert SEO</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="website.html"
+                      class="dropdown-link"
+                      role="menuitem"
+                    >
+                      Création de Site Web
+                      <span class="dropdown-description"
+                        >Générez plus de prospects et de ventes grâce à votre
+                        site optimisé en SEO</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="articles.html"
+                      class="dropdown-link"
+                      role="menuitem"
+                    >
+                      Articles de Blog SEO
+                      <span class="dropdown-description"
+                        >Boostez votre référencement avec nos Articles de blog
+                        SEO</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="contenus.html"
+                      class="dropdown-link"
+                      role="menuitem"
+                    >
+                      Community Management
+                      <span class="dropdown-description"
+                        >Soyez visible sur les réseaux et créez des leads
+                        qualifiés</span
+                      >
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
                 <a href="tarification.html" class="nav-link">Tarification</a>
@@ -355,18 +412,14 @@
             </ul>
           </nav>
 
-          <!-- Actions du header -->
           <div class="header-actions">
-            <!-- Bouton Contact Desktop -->
             <a
               href="contact.html"
               class="contact-btn contact-btn--desktop"
-              aria-label="Nous contacter pour un audit SEO"
+              aria-label="Formulaire de contact"
             >
               Nous contacter
             </a>
-
-            <!-- Bouton Contact Mobile -->
             <a
               href="contact.html"
               class="contact-btn contact-btn--mobile"
@@ -391,15 +444,13 @@
               </svg>
             </a>
 
-            <!-- Toggle menu mobile -->
+            <!-- Toggle Menu Mobile -->
             <button
               class="mobile-toggle"
               aria-label="Ouvrir le menu mobile"
               aria-expanded="false"
               aria-controls="mobile-navigation"
             >
-              <span class="mobile-toggle__line" aria-hidden="true"></span>
-              <span class="mobile-toggle__line" aria-hidden="true"></span>
               <span class="mobile-toggle__line" aria-hidden="true"></span>
             </button>
           </div>
@@ -416,19 +467,78 @@
           <li class="mobile-nav-item">
             <a href="index.html" class="mobile-nav-link">Accueil</a>
           </li>
-          <li class="mobile-nav-item">
-            <a href="audit-seo.html" class="mobile-nav-link active"
-              >Audit SEO</a
+          <li class="mobile-nav-item mobile-nav-item--dropdown">
+            <a
+              href="#"
+              class="mobile-nav-link mobile-nav-link--dropdown"
+              aria-expanded="false"
+              aria-haspopup="true"
             >
-          </li>
-          <li class="mobile-nav-item">
-            <a href="website.html" class="mobile-nav-link">Site Web</a>
+              Services
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <ul class="mobile-dropdown-menu" role="menu">
+              <li>
+                <a
+                  href="audit-seo.html"
+                  class="mobile-dropdown-link active"
+                  role="menuitem"
+                >
+                  Audit SEO
+                  <span class="mobile-dropdown-description"
+                    >Votre site analysé par un expert SEO</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="website.html"
+                  class="mobile-dropdown-link"
+                  role="menuitem"
+                >
+                  Création de Site Web
+                  <span class="mobile-dropdown-description"
+                    >Générez plus de prospects et de ventes grâce à votre site
+                    optimisé en SEO</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="articles.html"
+                  class="mobile-dropdown-link"
+                  role="menuitem"
+                >
+                  Articles de Blog SEO
+                  <span class="mobile-dropdown-description"
+                    >Boostez votre référencement avec nos Articles de blog
+                    SEO</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="contenus.html"
+                  class="mobile-dropdown-link"
+                  role="menuitem"
+                >
+                  Community Management
+                  <span class="mobile-dropdown-description"
+                    >Soyez visible sur les réseaux et créez des leads
+                    qualifiés</span
+                  >
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="mobile-nav-item">
             <a href="tarification.html" class="mobile-nav-link">Tarification</a>
           </li>
           <li class="mobile-nav-item">
             <a href="a-propos.html" class="mobile-nav-link">À propos</a>
+          </li>
+          <li class="mobile-nav-item">
+            <a href="contact.html" class="mobile-nav-link">Contact</a>
           </li>
         </ul>
       </nav>
@@ -619,7 +729,7 @@
         <!-- Titre centré -->
         <div class="container">
           <h2 id="audit-details-heading" class="section-title-centered">
-            Pourquoi auditer son site avec NOVA Business ?
+            Pourquoi auditer son site avec NOVA Business&nbsp;?
           </h2>
         </div>
 
@@ -632,7 +742,7 @@
             <h3>Améliorer le classement SEO d'un site</h3>
             <p>
               Votre site n'obtient-il pas le classement et le trafic de
-              recherche qu'il mérite ?
+              recherche qu'il mérite&nbsp;?
             </p>
             <p>
               De nombreux sites ont des éléments simples qui freinent leur
@@ -677,7 +787,7 @@
             <h3>Générez des leads</h3>
             <p>
               Vous souhaitez améliorer la visibilité de votre site ou celui de
-              votre entreprise ?
+              votre entreprise&nbsp;?
             </p>
             <p>
               Nos audits mettent en évidence les axes d’amélioration pour
@@ -720,7 +830,7 @@
       >
         <div class="container">
           <h2 id="report-heading" class="section-title-centered">
-            Que contient le rapport ?
+            Que contient le rapport&nbsp;?
           </h2>
         </div>
 
@@ -922,7 +1032,7 @@
             <h3>Rendu et compatibilité multi-appareils</h3>
             <p>
               Votre site s'affiche-t-il correctement sur tous les types
-              d'appareils ? Notre audit vérifie le rendu de votre site sur
+              d'appareils&nbsp;? Notre audit vérifie le rendu de votre site sur
               desktop, tablette et mobile.
             </p>
             <p>
@@ -950,20 +1060,23 @@
 
         <!-- Bloc 7 - Médias Sociaux  -->
         <section
-          class="social-media-section"
-          aria-labelledby="social-media-heading"
+          class="contenus-social-media-section"
+          aria-labelledby="contenus-social-media-heading"
         >
-          <div class="social-content">
-            <h2 id="social-media-heading" class="social-heading">
+          <div class="contenus-social-content">
+            <h2
+              id="contenus-social-media-heading"
+              class="contenus-social-heading"
+            >
               Éléments des médias sociaux
             </h2>
-            <p class="social-description">
+            <p class="contenus-social-description">
               Les médias sociaux ne sont pas des outils de référencement, mais
               ils sont néanmoins importants pour que les clients puissent
               accéder facilement à l'ensemble du profil en ligne de votre
               entreprise.
             </p>
-            <p class="social-description">
+            <p class="contenus-social-description">
               Vous obtiendrez un résumé de haut niveau de l'intégration de votre
               site avec les plateformes de médias sociaux populaires, y compris
               des liens vers Facebook, Twitter, LinkedIn et Instagram, ainsi que
@@ -972,51 +1085,69 @@
             </p>
           </div>
 
-          <!-- Icônes optimisées avec data attributes pour le positionnement -->
           <div
-            class="social-icons-floating"
+            class="contenus-social-icons-container"
             role="presentation"
             aria-hidden="true"
           >
-            <img
-              src="assets/img/facebook.webp"
-              alt=""
-              class="social-floating-icon"
-              data-position="facebook"
-              loading="lazy"
-              width="140"
-              height="140"
-            />
-            <img
-              src="assets/img/youtube.webp"
-              alt=""
-              class="social-floating-icon"
-              data-position="youtube"
-              loading="lazy"
-              width="120"
-              height="120"
-            />
-            <img
-              src="assets/img/instagram.webp"
-              alt=""
-              class="social-floating-icon"
-              data-position="instagram"
-              loading="lazy"
-              width="130"
-              height="130"
-            />
-            <img
-              src="assets/img/twitter.webp"
-              alt=""
-              class="social-floating-icon"
-              data-position="twitter"
-              loading="lazy"
-              width="125"
-              height="125"
-            />
+            <div class="contenus-social-icons-track">
+              <img
+                src="assets/img/facebook.webp"
+                alt="Logo Facebook"
+                class="contenus-social-icon"
+                data-position="facebook"
+                loading="lazy"
+                width="140"
+                height="140"
+              />
+              <img
+                src="assets/img/icon-logo-LinkedIn.webp"
+                alt="Logo LinkedIn"
+                class="contenus-social-icon"
+                data-position="linkedin"
+                loading="lazy"
+                width="120"
+                height="120"
+              />
+              <img
+                src="assets/img/instagram.webp"
+                alt="Logo Instagram"
+                class="contenus-social-icon"
+                data-position="instagram"
+                loading="lazy"
+                width="130"
+                height="130"
+              />
+              <img
+                src="assets/img/icon-logo-twitter.webp"
+                alt="Logo Twitter"
+                class="contenus-social-icon"
+                data-position="twitter"
+                loading="lazy"
+                width="125"
+                height="125"
+              />
+              <img
+                src="assets/img/icon-logo-pinterest.webp"
+                alt="Logo Pinterest"
+                class="contenus-social-icon"
+                data-position="pinterest"
+                loading="lazy"
+                width="130"
+                height="130"
+              />
+              <img
+                src="assets/img/icon-logo-reddit.webp"
+                alt="Logo Reddit"
+                class="contenus-social-icon"
+                data-position="reddit"
+                loading="lazy"
+                width="125"
+                height="125"
+              />
+            </div>
           </div>
         </section>
-
         <!-- Bloc 8: Les bases du référencement local -->
         <div
           class="section-two-cols section-two-cols--reverse"
@@ -1051,7 +1182,7 @@
             <h3>Pile technologique du site</h3>
             <p>
               Vous voulez savoir ce que vos concurrents utilisent pour
-              construire leur site ?
+              construire leur site&nbsp;?
             </p>
             <p>
               L'audit NOVA Business vérifie également le CMS, les logiciels et
@@ -1176,8 +1307,9 @@
               </div>
 
               <p class="card-target">
-                <strong>Pour qui ?</strong> TPE/PME, indépendants et professions
-                libérales qui veulent augmenter leur chiffre d'affaires.
+                <strong>Pour qui&nbsp;?</strong> TPE/PME, indépendants et
+                professions libérales qui veulent augmenter leur chiffre
+                d'affaires.
               </p>
 
               <div class="card-footer">
@@ -1232,8 +1364,8 @@
               </div>
 
               <p class="card-target">
-                <strong>Pour qui ?</strong> TPE/PME, dirigeants et équipes qui
-                veulent un plan clair, prêt à exécuter et à partager.
+                <strong>Pour qui&nbsp;?</strong> TPE/PME, dirigeants et équipes
+                qui veulent un plan clair, prêt à exécuter et à partager.
               </p>
 
               <div class="card-footer">
@@ -1288,8 +1420,8 @@
                 </ul>
               </div>
               <p class="card-target">
-                <strong>Pour qui ?</strong> Entreprises qui veulent passer à
-                l'action rapidement et être accompagnées par des experts.
+                <strong>Pour qui&nbsp;?</strong> Entreprises qui veulent passer
+                à l'action rapidement et être accompagnées par des experts.
               </p>
 
               <div class="card-footer">
@@ -1730,11 +1862,11 @@
         </div>
       </section>
       <!-- Section CTA Banner -->
-      <section id="cta-banner">
+      <section class="cta-banner">
         <div class="container cta-banner-container">
           <div class="cta-banner-content" data-animate="zoom-in">
             <h2 class="h2 cta-banner-title" id="cta-banner-heading">
-              Prêt à dépasser vos concurrents ?<br />
+              Prêt à dépasser vos concurrents&nbsp;?<br />
               Recevez votre audit SEO gratuit maintenant !
             </h2>
             <a
@@ -1743,7 +1875,7 @@
               aria-label="Recevez votre audit SEO gratuit"
               onclick="focusWidgetForm(event)"
             >
-            Analyser mon site gratuitement
+              Analyser mon site gratuitement
             </a>
           </div>
         </div>
@@ -1758,7 +1890,7 @@
           <div class="footer-brand-block">
             <img
               src="assets/img/Nova_business_logo.webp"
-              alt="Nova Business"
+              alt="NOVA Business logo"
               class="footer-logo"
               loading="lazy"
             />
@@ -1825,7 +1957,17 @@
           <ul class="footer-links">
             <li><a href="index.html" class="footer-link">Accueil</a></li>
             <li><a href="audit-seo.html" class="footer-link">Audit SEO</a></li>
-            <li><a href="website.html" class="footer-link">Site Web</a></li>
+            <li><a href="website.html" class="footer-link">Création de Site Web</a></li>
+            <li>
+              <a href="articles.html" class="footer-link"
+                >Articles de Blog SEO</a
+              >
+            </li>
+            <li>
+              <a href="contenus.html" class="footer-link"
+                >Community Management</a
+              >
+            </li>
             <li>
               <a href="tarification.html" class="footer-link">Tarification</a>
             </li>
@@ -1889,7 +2031,7 @@
 
           <div class="footer-contact-item">
             <a
-              href="https://maps.google.com"
+              href="https://www.google.com/maps/place/55+Av.+Marceau,+75016+Paris"
               target="_blank"
               rel="noopener noreferrer"
               class="footer-contact-icon"

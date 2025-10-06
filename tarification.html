@@ -269,19 +269,75 @@
               src="assets/img/Nova_business_logo.webp"
               alt="NOVA Business - Audit SEO"
               class="logo-image"
-              width="120"
-              height="40"
             />
           </a>
 
           <!-- Navigation principale -->
           <nav class="main-navigation" aria-label="Navigation principale">
             <ul class="nav-list">
-              <li class="nav-item">
-                <a href="audit-seo.html" class="nav-link">Audit SEO</a>
-              </li>
-              <li class="nav-item">
-                <a href="website.html" class="nav-link">Site Web</a>
+              <li class="nav-item nav-item--dropdown">
+                <a
+                  href="#"
+                  class="nav-link nav-link--dropdown"
+                  aria-expanded="false"
+                  aria-haspopup="true"
+                >
+                  Services
+                  <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </a>
+                <ul class="dropdown-menu" role="menu">
+                  <li>
+                    <a
+                      href="audit-seo.html"
+                      class="dropdown-link"
+                      role="menuitem"
+                    >
+                      Audit SEO
+                      <span class="dropdown-description"
+                        >Votre site analysé par un expert SEO</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="website.html"
+                      class="dropdown-link"
+                      role="menuitem"
+                    >
+                      Création de Site Web
+                      <span class="dropdown-description"
+                        >Générez plus de prospects et de ventes grâce à votre
+                        site optimisé en SEO</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="articles.html"
+                      class="dropdown-link"
+                      role="menuitem"
+                    >
+                      Articles de Blog SEO
+                      <span class="dropdown-description"
+                        >Boostez votre référencement avec nos Articles de blog
+                        SEO</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="contenus.html"
+                      class="dropdown-link"
+                      role="menuitem"
+                    >
+                      Community Management
+                      <span class="dropdown-description"
+                        >Soyez visible sur les réseaux et créez des leads
+                        qualifiés</span
+                      >
+                    </a>
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
                 <a href="tarification.html" class="nav-link active"
@@ -294,18 +350,14 @@
             </ul>
           </nav>
 
-          <!-- Actions du header -->
           <div class="header-actions">
-            <!-- Bouton Contact Desktop -->
             <a
-              href="contact.html#contact-form"
+              href="contact.html"
               class="contact-btn contact-btn--desktop"
-              aria-label="Nous contacter pour un audit SEO"
+              aria-label="Formulaire de contact"
             >
               Nous contacter
             </a>
-
-            <!-- Bouton Contact Mobile -->
             <a
               href="contact.html"
               class="contact-btn contact-btn--mobile"
@@ -330,15 +382,13 @@
               </svg>
             </a>
 
-            <!-- Toggle menu mobile -->
+            <!-- Toggle Menu Mobile -->
             <button
               class="mobile-toggle"
               aria-label="Ouvrir le menu mobile"
               aria-expanded="false"
               aria-controls="mobile-navigation"
             >
-              <span class="mobile-toggle__line" aria-hidden="true"></span>
-              <span class="mobile-toggle__line" aria-hidden="true"></span>
               <span class="mobile-toggle__line" aria-hidden="true"></span>
             </button>
           </div>
@@ -355,11 +405,69 @@
           <li class="mobile-nav-item">
             <a href="index.html" class="mobile-nav-link">Accueil</a>
           </li>
-          <li class="mobile-nav-item">
-            <a href="audit-seo.html" class="mobile-nav-link">Audit SEO</a>
-          </li>
-          <li class="mobile-nav-item">
-            <a href="website.html" class="mobile-nav-link">Site Web</a>
+          <li class="mobile-nav-item mobile-nav-item--dropdown">
+            <a
+              href="#"
+              class="mobile-nav-link mobile-nav-link--dropdown"
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              Services
+              <i class="fas fa-chevron-down" aria-hidden="true"></i>
+            </a>
+            <ul class="mobile-dropdown-menu" role="menu">
+              <li>
+                <a
+                  href="audit-seo.html"
+                  class="mobile-dropdown-link"
+                  role="menuitem"
+                >
+                  Audit SEO
+                  <span class="mobile-dropdown-description"
+                    >Votre site analysé par un expert SEO</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="website.html"
+                  class="mobile-dropdown-link"
+                  role="menuitem"
+                >
+                  Création de Site Web
+                  <span class="mobile-dropdown-description"
+                    >Générez plus de prospects et de ventes grâce à votre site
+                    optimisé en SEO</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="articles.html"
+                  class="mobile-dropdown-link"
+                  role="menuitem"
+                >
+                  Articles de Blog SEO
+                  <span class="mobile-dropdown-description"
+                    >Boostez votre référencement avec nos Articles de blog
+                    SEO</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="contenus.html"
+                  class="mobile-dropdown-link"
+                  role="menuitem"
+                >
+                  Community Management
+                  <span class="mobile-dropdown-description"
+                    >Soyez visible sur les réseaux et créez des leads
+                    qualifiés</span
+                  >
+                </a>
+              </li>
+            </ul>
           </li>
           <li class="mobile-nav-item">
             <a href="tarification.html" class="mobile-nav-link active"
@@ -375,7 +483,6 @@
         </ul>
       </nav>
     </header>
-
     <!-- Contenu principal -->
     <main class="main-content">
       <!-- Section Hero Tarification -->
@@ -458,7 +565,7 @@
               </div>
 
               <p class="card-target">
-                <strong>Pour qui ?</strong> TPE/PME, indés & professions
+                <strong>Pour qui&nbsp;?</strong> TPE/PME, indés & professions
                 libérales qui veulent des actions rapides.
               </p>
 
@@ -514,7 +621,8 @@
                   </li>
                   <li>Calendrier d'actions et indicateurs à suivre</li>
                   <li>
-                    Priorisation claire&nbsp;: quoi faire, dans quel ordre, pourquoi
+                    Priorisation claire&nbsp;: quoi faire, dans quel ordre,
+                    pourquoi
                   </li>
                   <li>
                     Rapport d'audit en PDF clair et du plan d'action livrés
@@ -525,7 +633,7 @@
               </div>
 
               <p class="card-target">
-                <strong>Pour qui ?</strong> Dirigeants & équipes qui veulent un
+                <strong>Pour qui&nbsp;?</strong> Dirigeants & équipes qui veulent un
                 plan prêt à exécuter.
               </p>
 
@@ -592,7 +700,7 @@
                 </ul>
               </div>
               <p class="card-target">
-                <strong>Pour qui ?</strong> Entreprises qui veulent passer à
+                <strong>Pour qui&nbsp;?</strong> Entreprises qui veulent passer à
                 l'action rapidement, accompagnées par des experts en SEO.
               </p>
 
@@ -730,16 +838,18 @@
               </p>
             </div>
           </div>
-          <!-- Maillage interne -->
-          <nav class="pricing-links" aria-label="Liens utiles">
-            <a href="#faq-section-tarif" class="contact-btn">FAQ Tarifs</a>
-            <a href="#" class="contact-btn" id="pdf-audit-trigger"
-              >Voir un audit</a
-            >
-            <a href="contact.html#calendly-widget" class="contact-btn"
-              >Parler à un expert</a
-            >
-          </nav>
+          <container>
+            <!-- Maillage interne -->
+            <nav class="pricing-links" aria-label="Liens utiles">
+              <a href="#faq-section-tarif" class="contact-btn">FAQ</a>
+              <a href="#" class="contact-btn" id="pdf-audit-trigger"
+                >Voir un audit</a
+              >
+              <a href="contact.html#calendly-widget" class="contact-btn"
+                >Parler à un expert</a
+              >
+            </nav>
+          </container>
         </div>
       </section>
 
@@ -862,7 +972,7 @@
                 </div>
 
                 <p class="card-target">
-                  <strong>Pour qui ?</strong> TPE, PME, indépendants et
+                  <strong>Pour qui&nbsp;?</strong> TPE, PME, indépendants et
                   professions libérales qui veulent une présence web
                   professionnelle.
                 </p>
@@ -922,7 +1032,7 @@
                 </div>
 
                 <p class="card-target">
-                  <strong>Pour qui ?</strong> Entrepreneurs, startups et petites
+                  <strong>Pour qui&nbsp;?</strong> Entrepreneurs, startups et petites
                   entreprises qui veulent une présence web efficace et directe.
                 </p>
 
@@ -987,7 +1097,7 @@
                 </div>
 
                 <p class="card-target">
-                  <strong>Pour qui ?</strong> Commerçants, artisans et
+                  <strong>Pour qui&nbsp;?</strong> Commerçants, artisans et
                   entreprises qui veulent vendre en ligne avec une solution
                   professionnelle.
                 </p>
@@ -1051,7 +1161,7 @@
                 </div>
 
                 <p class="card-target">
-                  <strong>Pour qui ?</strong> Entreprises avec un site obsolète
+                  <strong>Pour qui&nbsp;?</strong> Entreprises avec un site obsolète
                   qui veulent moderniser leur image et améliorer leurs
                   performances.
                 </p>
@@ -1117,7 +1227,7 @@
                 </div>
 
                 <p class="card-target">
-                  <strong>Pour qui ?</strong> Entrepreneurs et marketeurs qui
+                  <strong>Pour qui&nbsp;?</strong> Entrepreneurs et marketeurs qui
                   veulent maximiser leurs conversions sur une offre spécifique.
                 </p>
 
@@ -1180,7 +1290,7 @@
                 </div>
 
                 <p class="card-target">
-                  <strong>Pour qui ?</strong> Grandes entreprises et projets
+                  <strong>Pour qui&nbsp;?</strong> Grandes entreprises et projets
                   complexes nécessitant des fonctionnalités spécifiques et
                   personnalisées.
                 </p>
@@ -1226,8 +1336,9 @@
               </div>
               <h3 class="h3 audit-category-title">Design Responsive</h3>
               <p class="audit-category-description">
-                Interface moderne qui s'adapte parfaitement à tous les écrans&nbsp;:
-                mobile, tablette et desktop pour une expérience optimale.
+                Interface moderne qui s'adapte parfaitement à tous les
+                écrans&nbsp;: mobile, tablette et desktop pour une expérience
+                optimale.
               </p>
             </div>
 
@@ -1299,8 +1410,8 @@
               </div>
               <h3 class="h3 audit-category-title">Intégrations</h3>
               <p class="audit-category-description">
-                Connexions natives avec vos outils&nbsp;: Google Analytics, réseaux
-                sociaux, systèmes de paiement, API et automatisations.
+                Connexions natives avec vos outils&nbsp;: Google Analytics,
+                réseaux sociaux, systèmes de paiement, API et automatisations.
               </p>
             </div>
 
@@ -1343,7 +1454,7 @@
           <div class="faq-grid">
             <!-- Colonne gauche - Titre et bouton -->
             <div class="faq-content">
-              <p class="faq-subtitle">FAQ (FOIRE AUX QUESTIONS)</p>
+              <p class="faq-subtitle">FAQ TARIFICATION</p>
               <h2 id="faq-title-tarif" class="h2 faq-title">
                 Réponses aux<br />questions<br />fréquemment<br />posées
               </h2>
@@ -1363,7 +1474,7 @@
                     aria-controls="faq-1"
                   >
                     <span class="faq-question-text"
-                      >Comment fonctionne l'audit gratuit ?</span
+                      >Comment fonctionne l'audit gratuit&nbsp;?</span
                     >
                     <svg
                       class="faq-chevron"
@@ -1403,7 +1514,7 @@
                     aria-controls="faq-2"
                   >
                     <span class="faq-question-text"
-                      >Que contient le rapport d'audit complet ?</span
+                      >Que contient le rapport d'audit complet&nbsp;?</span
                     >
                     <svg
                       class="faq-chevron"
@@ -1430,9 +1541,9 @@
                     </p>
                     <p>
                       Nous analysons plus de 100 points de contrôle SEO,
-                      couvrant tous les piliers clés&nbsp;: Référencement On-Page,
-                      mots-clés, backlinks, performance mobile, UX, SEO local,
-                      réseaux sociaux, et bien plus.
+                      couvrant tous les piliers clés&nbsp;: Référencement
+                      On-Page, mots-clés, backlinks, performance mobile, UX, SEO
+                      local, réseaux sociaux, et bien plus.
                     </p>
                     <p>
                       Vous recevez votre rapport complet par email sous 1 heure,
@@ -1449,7 +1560,7 @@
                     aria-controls="faq-3"
                   >
                     <span class="faq-question-text"
-                      >Combien de temps faut-il pour recevoir mon audit ?</span
+                      >Combien de temps faut-il pour recevoir mon audit&nbsp;?</span
                     >
                     <svg
                       class="faq-chevron"
@@ -1486,7 +1597,7 @@
                   >
                     <span class="faq-question-text"
                       >Pouvez-vous m'aider à implémenter les recommandations
-                      ?</span
+                     &nbsp;?</span
                     >
                     <svg
                       class="faq-chevron"
@@ -1522,7 +1633,7 @@
                     aria-controls="faq-5"
                   >
                     <span class="faq-question-text"
-                      >Puis-je utiliser votre service pour mes clients ?</span
+                      >Puis-je utiliser votre service pour mes clients&nbsp;?</span
                     >
                     <svg
                       class="faq-chevron"
@@ -1560,7 +1671,7 @@
                   >
                     <span class="faq-question-text"
                       >Quels résultats puis-je attendre après un audit SEO
-                      ?</span
+                     &nbsp;?</span
                     >
                     <svg
                       class="faq-chevron"
@@ -1598,7 +1709,7 @@
                     aria-controls="faq-7"
                   >
                     <span class="faq-question-text"
-                      >Mes données sont-elles sécurisées ?</span
+                      >Mes données sont-elles sécurisées&nbsp;?</span
                     >
                     <svg
                       class="faq-chevron"
@@ -1663,7 +1774,7 @@
                 </p>
                 <div class="testimonial-author">
                   <img
-                    src="assets/img/client-avatar-1.webp"
+                    src="assets/img/client-avatar-5.webp"
                     alt="Photo de Inès Chevalier"
                     class="testimonial-avatar"
                     loading="lazy"
@@ -1715,8 +1826,8 @@
                   class="testimonial-ribbon testimonial-ribbon--yellow"
                 ></span>
                 <p class="testimonial-text">
-                  "Un audit SEO redoutable&nbsp;: plus de 100 points analysés et des
-                  conseils concrets. On a vu +150 % de trafic en 3 mois sur
+                  "Un audit SEO redoutable&nbsp;: plus de 100 points analysés et
+                  des conseils concrets. On a vu +150 % de trafic en 3 mois sur
                   notre boutique en ligne."
                 </p>
                 <div class="testimonial-author">
@@ -1843,11 +1954,11 @@
       </section>
 
       <!-- Section CTA Banner -->
-      <section id="cta-banner">
+      <section class="cta-banner">
         <div class="container cta-banner-container">
           <div class="cta-banner-content" data-animate="zoom-in">
             <h2 class="h2 cta-banner-title" id="cta-banner-heading">
-              Qu'attendez-vous ?<br />
+              Qu'attendez-vous&nbsp;?<br />
               Commandez votre audit SEO maintenant
             </h2>
             <a
@@ -1870,11 +1981,9 @@
           <div class="footer-brand-block">
             <img
               src="assets/img/Nova_business_logo.webp"
-              alt="NOVA Business"
+              alt="NOVA Business logo"
               class="footer-logo"
               loading="lazy"
-              width="120"
-              height="40"
             />
             <div class="social-icons">
               <a href="#" class="social-icon" aria-label="Facebook">
@@ -1904,8 +2013,6 @@
               alt="TubeRanker"
               class="footer-logo"
               loading="lazy"
-              width="100"
-              height="30"
             />
             <a href="#" class="footer-brand-link"
               >Outil de référencement YouTube</a
@@ -1918,8 +2025,6 @@
               alt="LocalRanking"
               class="footer-logo"
               loading="lazy"
-              width="100"
-              height="30"
             />
             <a href="#" class="footer-brand-link"
               >Audit des GBP, suivi local, etc.</a
@@ -1932,8 +2037,6 @@
               alt="AltTextGenerator"
               class="footer-logo"
               loading="lazy"
-              width="100"
-              height="30"
             />
             <a href="#" class="footer-brand-link">Alt Text Generator</a>
           </div>
@@ -1945,10 +2048,10 @@
           <ul class="footer-links">
             <li><a href="index.html" class="footer-link">Accueil</a></li>
             <li><a href="audit-seo.html" class="footer-link">Audit SEO</a></li>
-            <li><a href="website.html" class="footer-link">Site Web</a></li>
-            <li>
-              <a href="tarification.html" class="footer-link">Tarification</a>
-            </li>
+            <li><a href="website.html" class="footer-link">Création de Site Web</a></li>
+            <li><a href="articles.html" class="footer-link">Articles de Blog SEO</a></li>
+            <li><a href="contenus.html" class="footer-link">Community Management</a></li>
+            <li><a href="tarification.html" class="footer-link">Tarification</a></li>
             <li><a href="a-propos.html" class="footer-link">À propos</a></li>
             <li><a href="contact.html" class="footer-link">Contact</a></li>
           </ul>
@@ -2009,7 +2112,7 @@
 
           <div class="footer-contact-item">
             <a
-              href="https://maps.google.com"
+              href="https://www.google.com/maps/place/55+Av.+Marceau,+75016+Paris"
               target="_blank"
               rel="noopener noreferrer"
               class="footer-contact-icon"

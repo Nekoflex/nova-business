@@ -24,44 +24,203 @@
     },
   };
 
-  // ===== GESTION DE L'OMBRE DU HEADER AU SCROLL =====
-  const HeaderScroll = {
+  // ===== GESTION DU MENU MOBILE =====
+  const MobileMenu = {
+    // Configuration centralisée
+    config: {
+      animationDuration: 300,
+      desktopBreakpoint: 980,
+      closeDelay: 10,
+    },
+
     init: function () {
-      this.header = document.querySelector(".site-header");
-      this.scrollThreshold = 10;
-      this.isScrolled = false;
-      this.ticking = false;
-      if (this.header) {
+      this.state = { isOpen: false, isAnimating: false };
+      this.elements = {
+        toggle: document.querySelector(".mobile-toggle"),
+        navigation: document.querySelector(".mobile-navigation"),
+        header: document.querySelector(".site-header"),
+        links: document.querySelectorAll(".mobile-nav-link"),
+      };
+
+      if (this.elements.toggle && this.elements.navigation) {
+        this.setupInitialState();
         this.bindEvents();
-        this.checkScroll();
       }
     },
 
+    setupInitialState: function () {
+      this.setState(false);
+      this.elements.toggle.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    },
+
     bindEvents: function () {
-      window.addEventListener("scroll", this.onScroll.bind(this), {
-        passive: true,
+      // Toggle du menu
+      this.elements.toggle.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (!this.state.isAnimating) this.toggleMenu();
+      });
+
+      // Fermer sur clic de lien (sauf dropdowns)
+      this.elements.links.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (
+            !link.classList.contains("mobile-nav-link--dropdown") &&
+            this.state.isOpen
+          ) {
+            this.closeMenu();
+          }
+        });
+      });
+
+      // Variable pour tracker les vrais clics vs scroll events
+      let isUserInteracting = false;
+      let interactionTimeout;
+
+      // Marquer les vraies interactions utilisateur
+      ["mousedown", "touchstart"].forEach((eventType) => {
+        document.addEventListener(
+          eventType,
+          () => {
+            isUserInteracting = true;
+            clearTimeout(interactionTimeout);
+            interactionTimeout = setTimeout(() => {
+              isUserInteracting = false;
+            }, 100);
+          },
+          { passive: true }
+        );
+      });
+
+      // Fermer sur clic extérieur (mais pas sur scroll/touch)
+      document.addEventListener(
+        "click",
+        (e) => {
+          // Ignorer les événements de scroll et touch
+          if (e.isTrusted === false || e.detail === 0 || !isUserInteracting)
+            return;
+
+          if (
+            this.state.isOpen &&
+            !this.elements.toggle.contains(e.target) &&
+            !this.elements.navigation.contains(e.target) &&
+            !this.state.isAnimating &&
+            e.type === "click" // S'assurer que c'est bien un vrai clic
+          ) {
+            setTimeout(() => this.closeMenu(), this.config.closeDelay);
+          }
+        },
+        { passive: true }
+      );
+
+      // Fermer sur resize desktop
+      window.addEventListener(
+        "resize",
+        Utils.debounce(() => {
+          if (
+            window.innerWidth >= this.config.desktopBreakpoint &&
+            this.state.isOpen
+          ) {
+            this.closeMenu();
+          }
+        }, 100)
+      );
+
+      // Fermer avec Échap
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && this.state.isOpen) this.closeMenu();
       });
     },
 
-    onScroll: function () {
+    toggleMenu: function () {
+      this.state.isOpen ? this.closeMenu() : this.openMenu();
+    },
+
+    // Méthode unifiée pour gérer l'état du menu
+    setState: function (isOpen) {
+      if (this.state.isAnimating) return;
+
+      this.state.isAnimating = true;
+      this.state.isOpen = isOpen;
+
+      // Classes CSS
+      const action = isOpen ? "add" : "remove";
+      this.elements.toggle.classList[action]("active");
+      this.elements.navigation.classList[action]("active");
+      if (this.elements.header)
+        this.elements.header.classList[action]("mobile-menu-open");
+      document.body.classList[action]("mobile-menu-open");
+
+      // Attributs ARIA
+      this.elements.toggle.setAttribute("aria-expanded", isOpen.toString());
+
+      // Fin d'animation
+      setTimeout(() => {
+        this.state.isAnimating = false;
+      }, this.config.animationDuration);
+    },
+
+    openMenu: function () {
+      if (!this.state.isOpen) this.setState(true);
+    },
+
+    closeMenu: function () {
+      if (this.state.isOpen) this.setState(false);
+    },
+
+    // Méthode publique pour forcer la fermeture
+    forceClose: function () {
+      this.state.isAnimating = false;
+      this.closeMenu();
+    },
+  };
+
+  // Module pour gérer le header dynamique au scroll
+  const HeaderScroll = {
+    header: null,
+    scrollThreshold: 50,
+    isScrolled: false,
+    lastScrollY: 0,
+    ticking: false,
+
+    init: function () {
+      this.header = document.querySelector(".site-header");
+      if (!this.header) return;
+
+      // Bind des événements
+      this.bindEvents();
+    },
+
+    bindEvents: function () {
+      // Utiliser requestAnimationFrame pour optimiser les performances
+      window.addEventListener("scroll", () => {
+        this.lastScrollY = window.scrollY;
+        this.requestTick();
+      });
+
+      // Écouter les changements de taille d'écran
+      window.addEventListener("resize", () => {
+        this.handleResize();
+      });
+    },
+
+    requestTick: function () {
       if (!this.ticking) {
-        requestAnimationFrame(this.updateHeader.bind(this));
+        requestAnimationFrame(() => {
+          this.updateHeader();
+          this.ticking = false;
+        });
         this.ticking = true;
       }
     },
 
     updateHeader: function () {
-      this.checkScroll();
-      this.ticking = false;
-    },
-
-    checkScroll: function () {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-      const shouldBeScrolled = scrollTop > this.scrollThreshold;
+      const shouldBeScrolled = this.lastScrollY > this.scrollThreshold;
 
       if (shouldBeScrolled !== this.isScrolled) {
         this.isScrolled = shouldBeScrolled;
+
         if (this.isScrolled) {
           this.header.classList.add("is-scrolled");
         } else {
@@ -69,154 +228,24 @@
         }
       }
     },
-  };
 
-  // ===== GESTION DU MENU MOBILE =====
-  const MobileMenu = {
-    init: function () {
-      this.isOpen = false;
-      this.isAnimating = false;
-      this.toggle = document.querySelector(".mobile-toggle");
-      this.navigation = document.querySelector(".mobile-navigation");
-      this.header = document.querySelector(".site-header");
-      this.links = document.querySelectorAll(".mobile-nav-link");
-
-      if (this.toggle && this.navigation) {
-        this.setupInitialState();
-        this.bindEvents();
-      } else {
-        return;
-      }
-    },
-
-    setupInitialState: function () {
-      // S'assurer que le menu est fermé au démarrage
-      this.toggle.classList.remove("active");
-      this.navigation.classList.remove("active");
-      this.toggle.setAttribute("aria-expanded", "false");
-      if (this.header) {
-        this.header.classList.remove("mobile-menu-open");
-      }
-      document.body.style.overflow = "";
-      this.isOpen = false;
-    },
-
-    bindEvents: function () {
-      // Toggle du menu avec protection contre les clics multiples
-      this.toggle.addEventListener("click", (e) => {
-        e.preventDefault();
-        e.stopPropagation();
-
-        if (!this.isAnimating) {
-          this.toggleMenu();
-        }
-      });
-
-      // Fermer le menu lors du clic sur un lien
-      this.links.forEach((link) => {
-        link.addEventListener("click", (e) => {
-          if (this.isOpen) {
-            this.closeMenu();
-          }
-        });
-      });
-
-      // Fermer le menu lors du clic en dehors (avec délai pour éviter les conflits)
-      document.addEventListener("click", (e) => {
-        if (
-          this.isOpen &&
-          !this.toggle.contains(e.target) &&
-          !this.navigation.contains(e.target) &&
-          !this.isAnimating
-        ) {
-          setTimeout(() => {
-            this.closeMenu();
-          }, 10);
-        }
-      });
-
-      // Fermer le menu si on redimensionne vers desktop
-      window.addEventListener(
-        "resize",
-        Utils.debounce(() => {
-          if (window.innerWidth >= 980 && this.isOpen) {
-            this.closeMenu();
-          }
-        }, 100)
-      );
-
-      // Fermer le menu avec Échap
-      document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && this.isOpen) {
-          this.closeMenu();
-        }
-      });
-    },
-
-    toggleMenu: function () {
-      if (this.isOpen) {
-        this.closeMenu();
-      } else {
-        this.openMenu();
-      }
-    },
-
-    openMenu: function () {
-      if (this.isOpen || this.isAnimating) return;
-
-      this.isAnimating = true;
-      this.isOpen = true;
-
-      // Ajouter les classes
-      this.toggle.classList.add("active");
-      this.navigation.classList.add("active");
-      if (this.header) {
-        this.header.classList.add("mobile-menu-open");
-      }
-      this.toggle.setAttribute("aria-expanded", "true");
-
-      // Empêcher le scroll du body avec classe CSS
-      document.body.classList.add("mobile-menu-open");
-
-      // Fin de l'animation
-      setTimeout(() => {
-        this.isAnimating = false;
-      }, 300);
-    },
-
-    closeMenu: function () {
-      if (!this.isOpen || this.isAnimating) return;
-
-      this.isAnimating = true;
-      this.isOpen = false;
-
-      // Retirer les classes
-      this.toggle.classList.remove("active");
-      this.navigation.classList.remove("active");
-      if (this.header) {
-        this.header.classList.remove("mobile-menu-open");
-      }
-      this.toggle.setAttribute("aria-expanded", "false");
-
-      // Restaurer le scroll du body
-      document.body.classList.remove("mobile-menu-open");
-
-      // Fin de l'animation
-      setTimeout(() => {
-        this.isAnimating = false;
-      }, 300);
-    },
-
-    // Méthode publique pour forcer la fermeture
-    forceClose: function () {
-      this.isAnimating = false;
-      this.closeMenu();
+    handleResize: function () {
+      // Réinitialiser l'état du header lors du redimensionnement
+      this.updateHeader();
     },
   };
+
+  // Initialisation du header scroll
+  HeaderScroll.init();
 
   // ===== GESTION DU CARROUSEL DE TÉMOIGNAGES =====
   const TestimonialsCarousel = {
     init: function () {
+      // Vérifier si jQuery est disponible dès le début
+      if (typeof $ === "undefined") {
+        return;
+      }
+
       // Nettoyer les timers existants
       if (this.alternateTimer) {
         clearTimeout(this.alternateTimer);
@@ -549,7 +578,14 @@
   // ===== GESTION DU SMOOTH SCROLL =====
   const SmoothScroll = {
     init: function () {
-      this.links = document.querySelectorAll('a[href^="#"]');
+      // Sélectionner UNIQUEMENT les liens avec des ancres valides (plus de 1 caractère)
+      this.links = Array.from(document.querySelectorAll('a[href^="#"]')).filter(
+        (link) => {
+          const href = link.getAttribute("href");
+          return href && href.length > 1 && href !== "#";
+        }
+      );
+
       if (this.links.length) {
         this.bindEvents();
       }
@@ -559,6 +595,12 @@
       this.links.forEach((link) => {
         link.addEventListener("click", (e) => {
           const targetId = link.getAttribute("href");
+
+          // Vérifier que le targetId est valide et non vide
+          if (!targetId || targetId === "#" || targetId.length <= 1) {
+            return; // Ignorer les liens avec des ancres vides ou invalides
+          }
+
           const targetElement = document.querySelector(targetId);
 
           if (targetElement) {
@@ -685,8 +727,9 @@
 
   // ===== INITIALISATION AU CHARGEMENT DU DOM =====
   document.addEventListener("DOMContentLoaded", function () {
-    HeaderScroll.init();
     MobileMenu.init();
+    // Rendre MobileMenu accessible globalement pour les dropdowns
+    window.MobileMenu = MobileMenu;
     TestimonialsCarousel.init();
     SmoothScroll.init();
     CTABanner.init();
@@ -1263,7 +1306,9 @@
       // Vérifier si on est sur la page website
       if (
         !document.body.classList.contains("page-website") &&
-        !window.location.pathname.includes("website")
+        !document.body.classList.contains("page-contenus") &&
+        !window.location.pathname.includes("website") &&
+        !window.location.pathname.includes("contenus")
       ) {
         return;
       }
@@ -1782,3 +1827,575 @@ function closeSoModal() {
     }
   });
 })();
+
+/*
+ * ===================================================================
+ * // Section  contenus-social-media-section -  contenus-social-icons-floating -Page audit-seo et contenus
+ * ===================================================================
+ */
+// Animation fluide infinie des icônes sociales - Version optimisée avec fondu
+document.addEventListener("DOMContentLoaded", function () {
+  const BREAKPOINT = 1200;
+  const container = document.querySelector(".contenus-social-icons-container");
+  const track = document.querySelector(".contenus-social-icons-track");
+
+  if (!container || !track) return;
+
+  // Variables d'état
+  let isInitialized = false;
+  let resizeTimeout;
+
+  // Vérification des préférences d'accessibilité
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  function initializeMarquee() {
+    if (
+      isInitialized ||
+      window.innerWidth >= BREAKPOINT ||
+      prefersReducedMotion
+    )
+      return;
+
+    // Créer 3 copies pour un défilement vraiment infini
+    const originalIcons = Array.from(track.children);
+
+    // Ajouter 2 copies supplémentaires (total = 3x les icônes)
+    for (let i = 0; i < 2; i++) {
+      originalIcons.forEach((icon) => {
+        const clone = icon.cloneNode(true);
+        track.appendChild(clone);
+      });
+    }
+
+    // Calculer la durée pour une vitesse de 15px/s (plus lente et fluide)
+    setTimeout(() => {
+      const singleSetWidth = track.scrollWidth / 3;
+      const duration = singleSetWidth / 50; // Vitesse réduite à 15px/s
+
+      // Appliquer l'animation CSS infinie
+      track.style.animationDuration = `${duration}s`;
+      track.classList.add("marquee-active");
+    }, 100);
+
+    isInitialized = true;
+  }
+
+  function resetMarquee() {
+    if (!isInitialized) return;
+
+    // Stopper l'animation
+    track.classList.remove("marquee-active");
+    track.style.animationDuration = "";
+    track.style.transform = "translateX(0)";
+
+    // Supprimer les clones (garder seulement les originaux)
+    const allIcons = Array.from(track.children);
+    const originalCount = allIcons.length / 3;
+    allIcons.slice(originalCount).forEach((clone) => clone.remove());
+
+    isInitialized = false;
+  }
+
+  function handleResize() {
+    const isDesktop = window.innerWidth >= BREAKPOINT;
+
+    if (isDesktop) {
+      resetMarquee();
+    } else if (!isInitialized && !prefersReducedMotion) {
+      // Délai pour permettre au CSS de se stabiliser
+      setTimeout(initializeMarquee, 200);
+    }
+  }
+
+  // Gestion du resize avec debounce
+  window.addEventListener("resize", function () {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(handleResize, 150);
+  });
+
+  // Pause sur visibilité de l'onglet (économie de ressources)
+  document.addEventListener("visibilitychange", function () {
+    if (!track.classList.contains("marquee-active")) return;
+
+    if (document.hidden) {
+      track.style.animationPlayState = "paused";
+    } else {
+      track.style.animationPlayState = "running";
+    }
+  });
+
+  // Nettoyage au déchargement
+  window.addEventListener("beforeunload", resetMarquee);
+
+  // Initialisation
+  handleResize();
+});
+
+/**
+ * Timeline Animations Controller
+ * Gère les animations des lignes de connexion, compteurs et étapes via Intersection Observer
+ * Optimisé pour les performances et l'accessibilité
+ */
+
+class TimelineAnimations {
+  constructor() {
+    // Options pour l'Intersection Observer : déclenche quand 30% de l'élément est visible, avec une marge de -20% en bas
+    this.observerOptions = {
+      root: null, // Utilise la fenêtre comme root
+      rootMargin: "0px 0px -20% 0px", // Déclenche 20% avant que l'élément entre complètement dans la vue
+      threshold: 0.3, // 30% de l'élément doit être visible
+    };
+
+    this.observer = null; // L'observer sera créé plus tard
+    this.timelineEvents = []; // Liste des éléments de timeline
+    this.counters = []; // Liste des compteurs de statistiques
+    this.steps = []; // Liste des étapes de processus
+
+    // Vérifie si l'utilisateur préfère réduire les animations (accessibilité)
+    this.prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    this.init(); // Lance l'initialisation
+  }
+
+  init() {
+    this.timelineEvents = document.querySelectorAll(".timeline-new li");
+    this.counters = document.querySelectorAll(".stat-banner-number");
+    this.steps = document.querySelectorAll(".process-step");
+
+    // Si aucun élément trouvé, arrête et log un avertissement
+    if (
+      this.timelineEvents.length === 0 &&
+      this.counters.length === 0 &&
+      this.steps.length === 0
+    ) {
+      console.warn("Aucun élément d'animation trouvé");
+      return;
+    }
+
+    this.createObserver(); // Crée l'observer
+    this.observeElements(); // Observe les éléments
+
+    console.log(
+      `Timeline Observer initialisé pour ${this.timelineEvents.length} timelines, ${this.counters.length} compteurs, ${this.steps.length} étapes`
+    );
+  }
+
+  createObserver() {
+    // Crée un seul Intersection Observer pour tous les éléments (optimisation)
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Si l'élément entre dans la vue
+          const element = entry.target;
+          const delay = parseInt(element.getAttribute("data-delay")) || 0; // Récupère le délai personnalisé (par défaut 0)
+
+          if (this.prefersReducedMotion) {
+            // Applique directement sans animation pour l'accessibilité
+            this.applyAnimation(element);
+          } else {
+            // Applique avec délai pour un effet progressif
+            setTimeout(() => {
+              this.applyAnimation(element);
+            }, delay);
+          }
+
+          this.observer.unobserve(element); // Arrête d'observer cet élément (animation unique)
+        }
+      });
+    }, this.observerOptions);
+  }
+
+  applyAnimation(element) {
+    // Applique l'animation appropriée selon le type d'élément
+    if (element.classList.contains("stat-banner-number")) {
+      this.animateCounter(element); // Animation de compteur
+    } else {
+      element.classList.add("animate"); // Animation CSS standard (ex. fade-in)
+    }
+  }
+
+  animateCounter(counter) {
+    // Anime un compteur de 0 à la valeur cible
+    const target = parseInt(counter.getAttribute("data-target"), 10);
+    if (isNaN(target)) return; // Si pas de cible valide, arrête
+
+    const duration = 2000; // Durée de 2 secondes
+    const startTime = performance.now(); // Temps de départ précis
+    const startValue = 0; // Commence à 0
+
+    const updateCounter = (currentTime) => {
+      const elapsed = currentTime - startTime; // Temps écoulé
+      const progress = Math.min(elapsed / duration, 1); // Progression (0 à 1)
+      const currentValue = Math.floor(
+        startValue + (target - startValue) * progress
+      ); // Valeur actuelle
+
+      counter.textContent = currentValue; // Met à jour le texte
+
+      if (progress < 1) {
+        requestAnimationFrame(updateCounter); // Continue l'animation
+      } else {
+        counter.textContent = target; // Fin à la valeur exacte
+      }
+    };
+
+    requestAnimationFrame(updateCounter); // Lance l'animation
+  }
+
+  observeElements() {
+    // Observe tous les éléments sélectionnés
+    [...this.timelineEvents, ...this.counters, ...this.steps].forEach(
+      (element) => {
+        this.observer.observe(element);
+      }
+    );
+  }
+
+  // Méthode publique pour nettoyer l'observer si nécessaire (ex. lors de la navigation)
+  destroy() {
+    if (this.observer) {
+      this.observer.disconnect();
+      this.observer = null;
+    }
+  }
+}
+
+// Initialisation automatique au chargement du DOM
+document.addEventListener("DOMContentLoaded", () => {
+  window.timelineAnimations = new TimelineAnimations(); // Crée une instance globale pour accès facile
+});
+
+// ===== GESTION DES MENUS DÉROULANTS - VERSION CORRIGÉE =====
+const DropdownMenu = {
+  init: function () {
+    this.dropdownItems = document.querySelectorAll(".nav-item--dropdown");
+    this.mobileDropdownItems = document.querySelectorAll(
+      ".mobile-nav-item--dropdown"
+    );
+    this.isInitialized = false;
+
+    if (this.dropdownItems.length > 0 || this.mobileDropdownItems.length > 0) {
+      // Forcer la fermeture de tous les dropdowns au démarrage
+      this.forceCloseAll();
+      this.bindEvents();
+      this.isInitialized = true;
+    }
+  },
+
+  // Nouvelle méthode pour forcer la fermeture au démarrage
+  forceCloseAll: function () {
+    // Fermer tous les dropdowns desktop
+    this.dropdownItems.forEach((item) => {
+      item.classList.remove("active");
+      const link = item.querySelector(".nav-link--dropdown");
+      if (link) {
+        link.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Fermer tous les dropdowns mobiles
+    this.mobileDropdownItems.forEach((item) => {
+      item.classList.remove("active");
+      const link = item.querySelector(".mobile-nav-link--dropdown");
+      if (link) {
+        link.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // NOUVEAU: Nettoyage supplémentaire pour s'assurer qu'aucun état persistant ne reste
+    document.querySelectorAll(".nav-item--dropdown").forEach((item) => {
+      item.classList.remove("active");
+    });
+    document.querySelectorAll(".mobile-nav-item--dropdown").forEach((item) => {
+      item.classList.remove("active");
+    });
+    document.querySelectorAll(".dropdown-menu").forEach((menu) => {
+      menu.style.display = "";
+      menu.style.visibility = "";
+      menu.style.opacity = "";
+    });
+  },
+
+  bindEvents: function () {
+    this.dropdownItems.forEach((item) => {
+      const link = item.querySelector(".nav-link--dropdown");
+
+      if (link) {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          this.toggleDropdown(item);
+        });
+      }
+
+      const dropdownLinks = item.querySelectorAll(".dropdown-link");
+      dropdownLinks.forEach((dropdownLink) => {
+        dropdownLink.addEventListener("click", () => {
+          this.closeAllDropdowns();
+        });
+      });
+    });
+
+    // Gestion mobile
+    this.mobileDropdownItems.forEach((item) => {
+      const link = item.querySelector(".mobile-nav-link--dropdown");
+
+      if (link) {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          this.toggleMobileDropdown(item);
+        });
+      }
+
+      // Fermer le menu mobile quand on clique sur un lien du dropdown
+      const dropdownLinks = item.querySelectorAll(".mobile-dropdown-link");
+      dropdownLinks.forEach((dropdownLink) => {
+        dropdownLink.addEventListener("click", () => {
+          // Fermer TOUS les dropdowns puis fermer le menu mobile
+          this.closeAllDropdowns();
+          if (window.MobileMenu && window.MobileMenu.state.isOpen) {
+            window.MobileMenu.closeMenu();
+          }
+        });
+      });
+    });
+
+    // Fermer au clic externe - VERSION SIMPLIFIÉE
+    document.addEventListener("click", (e) => {
+      if (!e.isTrusted) return;
+
+      if (
+        !e.target.closest(".nav-item--dropdown") &&
+        !e.target.closest(".mobile-nav-item--dropdown")
+      ) {
+        this.closeAllDropdowns();
+      }
+    });
+
+    // Fermer au redimensionnement
+    window.addEventListener("resize", () => {
+      this.closeAllDropdowns();
+    });
+
+    // NOUVEAU: Fermer au chargement de nouvelle page
+    window.addEventListener("beforeunload", () => {
+      this.closeAllDropdowns();
+    });
+
+    // NOUVEAU: S'assurer que tout est fermé au chargement de page
+    window.addEventListener("load", () => {
+      this.forceCloseAll();
+    });
+
+    // NOUVEAU: Fermer avec la touche Échap
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        this.closeAllDropdowns();
+      }
+    });
+  },
+
+  toggleDropdown: function (item) {
+    const isActive = item.classList.contains("active");
+
+    // TOUJOURS fermer TOUS les autres dropdowns d'abord
+    this.closeAllDropdowns();
+
+    // Si l'item n'était pas actif, l'ouvrir
+    if (!isActive) {
+      item.classList.add("active");
+      const link = item.querySelector(".nav-link--dropdown");
+      if (link) {
+        link.setAttribute("aria-expanded", "true");
+      }
+    }
+    // Si il était actif, il reste fermé (déjà fermé par closeAllDropdowns)
+  },
+
+  toggleMobileDropdown: function (item) {
+    const isActive = item.classList.contains("active");
+
+    // TOUJOURS fermer TOUS les autres dropdowns d'abord
+    this.closeAllDropdowns();
+
+    // Si l'item n'était pas actif, l'ouvrir
+    if (!isActive) {
+      item.classList.add("active");
+      const link = item.querySelector(".mobile-nav-link--dropdown");
+      if (link) {
+        link.setAttribute("aria-expanded", "true");
+      }
+    }
+  },
+
+  closeAllDropdowns: function () {
+    // Fermer tous les dropdowns desktop
+    this.dropdownItems.forEach((item) => {
+      item.classList.remove("active");
+      const link = item.querySelector(".nav-link--dropdown");
+      if (link) {
+        link.setAttribute("aria-expanded", "false");
+      }
+    });
+
+    // Fermer tous les dropdowns mobiles
+    this.mobileDropdownItems.forEach((item) => {
+      item.classList.remove("active");
+      const link = item.querySelector(".mobile-nav-link--dropdown");
+      if (link) {
+        link.setAttribute("aria-expanded", "false");
+      }
+    });
+  },
+};
+
+// Initialisation IMMÉDIATE pour éviter le flash
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", () => {
+    DropdownMenu.init();
+  });
+} else {
+  // Si le DOM est déjà chargé, initialiser immédiatement
+  DropdownMenu.init();
+}
+
+/*
+ * ===================================================================
+ * ## Timeline Icons Pop-up Animation
+ * ===================================================================
+ */
+
+/**
+ * Timeline Icons Pop-up Animation
+ * Animation simple et élégante pour les icônes de timeline
+ */
+
+class TimelineIconsAnimation {
+  constructor() {
+    this.icons = [];
+    this.observer = null;
+    this.observerOptions = {
+      root: null,
+      rootMargin: "0px 0px -10% 0px",
+      threshold: 0.3,
+    };
+
+    this.init();
+  }
+
+  init() {
+    this.icons = document.querySelectorAll(".timeline-new li .date, .timeline-new li .title");
+
+    if (this.icons.length === 0) {
+      console.warn("Timeline Icons Animation: Aucune icône trouvée");
+      return;
+    }
+
+    // Créer l'observer
+    this.createObserver();
+
+    // Observer chaque icône
+    this.icons.forEach((icon) => {
+      this.observer.observe(icon); // Observer directement l'icône elle-même
+    });
+
+    console.log(
+      `Timeline Icons Animation: ${this.icons.length} icônes initialisées`
+    );
+  }
+
+  createObserver() {
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        // L'icône est l'élément observé lui-même (pas un enfant <i>)
+        const icon = entry.target;
+
+        if (entry.isIntersecting) {
+          // Ajouter un délai progressif basé sur l'index
+          const icons = Array.from(this.icons);
+          const iconIndex = icons.indexOf(icon);
+          const delay = iconIndex * 150; // 150ms entre chaque icône
+
+          setTimeout(() => {
+            this.animateIcon(icon);
+          }, delay);
+
+          // Ne plus observer cette icône après animation
+          this.observer.unobserve(entry.target);
+        }
+      });
+    }, this.observerOptions);
+  }
+
+  animateIcon(icon) {
+    // Vérification de sécurité
+    if (!icon || !icon.classList) {
+      console.warn("Timeline Icons Animation: Élément invalide pour l'animation");
+      return;
+    }
+
+    // Ajouter la classe d'animation
+    icon.classList.add("animate-pop-in");
+
+    // Ajouter un effet de rebond après l'animation initiale
+    setTimeout(() => {
+      if (icon.classList) {
+        icon.classList.add("animate-bounce");
+      }
+    }, 400);
+
+    // Nettoyer les classes après animation
+    setTimeout(() => {
+      if (icon.classList) {
+        icon.classList.remove("animate-bounce");
+      }
+    }, 800);
+  }
+
+  // Méthode pour réinitialiser les animations (pour debug)
+  reset() {
+    this.icons.forEach((icon) => {
+      if (icon && icon.classList) {
+        icon.classList.remove("animate-pop-in", "animate-bounce");
+      }
+    });
+
+    // Réobserver toutes les icônes
+    this.icons.forEach((icon) => {
+      if (icon) {
+        this.observer.observe(icon); // Observer directement l'icône
+      }
+    });
+  }
+
+  // Nettoyage
+  destroy() {
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+    this.icons = [];
+  }
+}
+
+// Initialisation automatique
+document.addEventListener("DOMContentLoaded", () => {
+  // Attendre que tous les styles soient chargés
+  setTimeout(() => {
+    window.timelineIconsAnimation = new TimelineIconsAnimation();
+  }, 100);
+});
+
+// Nettoyage lors du déchargement
+window.addEventListener("beforeunload", () => {
+  if (
+    window.timelineIconsAnimation &&
+    typeof window.timelineIconsAnimation.destroy === "function"
+  ) {
+    window.timelineIconsAnimation.destroy();
+  }
+});
