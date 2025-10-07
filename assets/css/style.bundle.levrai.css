@@ -9468,7 +9468,7 @@ body {
 }
 
 .pricing-hero-image {
-    background: url('../img/bg-tarification.png') no-repeat center/contain;
+    background: url('../img/bg-tarification.webp') no-repeat center/contain;
     inset: 0;
     position: absolute;
     z-index: -1;
