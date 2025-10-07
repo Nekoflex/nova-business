@@ -238,343 +238,6 @@
   // Initialisation du header scroll
   HeaderScroll.init();
 
-  // ===== GESTION DU CARROUSEL DE TÉMOIGNAGES =====
-  const TestimonialsCarousel = {
-    init: function () {
-      // Vérifier si jQuery est disponible dès le début
-      if (typeof $ === "undefined") {
-        return;
-      }
-
-      // Nettoyer les timers existants
-      if (this.alternateTimer) {
-        clearTimeout(this.alternateTimer);
-      }
-      if (this.resumeTimer) {
-        clearTimeout(this.resumeTimer);
-      }
-
-      // Attendre que le DOM soit complètement chargé
-      setTimeout(() => {
-        this.firstCarousel = $(".testimonials-slider--first");
-        this.secondCarousel = $(".testimonials-slider--second");
-        this.isAlternating = false;
-        this.currentActiveRow = 1;
-
-        // Vérifier si la section testimonials existe
-        const testimonialsSection = document.querySelector("#testimonials");
-        if (testimonialsSection) {
-          // Forcer la visibilité
-          testimonialsSection.style.display = "block";
-          testimonialsSection.style.visibility = "visible";
-          testimonialsSection.style.opacity = "1";
-        }
-        if (this.firstCarousel.length) {
-          // Détruire d'abord l'instance Slick existante du premier carrousel si elle existe
-          if (this.firstCarousel.hasClass("slick-initialized")) {
-            this.firstCarousel.slick("unslick");
-          }
-
-          // Initialiser le premier carrousel
-          this.setupFirstCarousel();
-
-          // Vérifier si le second carrousel existe aussi
-          if (this.secondCarousel.length) {
-            // Détruire l'instance Slick existante du second carrousel si elle existe
-            if (this.secondCarousel.hasClass("slick-initialized")) {
-              this.secondCarousel.slick("unslick");
-            }
-
-            // Initialiser le second carrousel
-            this.setupSecondCarousel();
-
-            // Activer le système d'alternance seulement si les deux carrousels existent
-            this.startAlternatingSystem();
-            this.bindEvents();
-            this.handleScreenSize();
-          }
-        } else {
-          // Fallback: afficher les testimonials sans carrousel
-          this.fallbackDisplay();
-        }
-      }, 100);
-    },
-    fallbackDisplay: function () {
-      const testimonialsSection = document.querySelector("#testimonials");
-      if (testimonialsSection) {
-        testimonialsSection.classList.add("js-disabled");
-        // Afficher tous les témoignages en ligne
-        const testimonialItems =
-          testimonialsSection.querySelectorAll(".testimonial-item");
-        testimonialItems.forEach((item) => {
-          item.style.display = "inline-block";
-          item.style.width = "300px";
-          item.style.margin = "0 15px 40px";
-          item.style.verticalAlign = "top";
-        });
-      }
-    },
-    setupFirstCarousel: function () {
-      // Configuration pour le premier carrousel - PAS d'autoplay
-      const firstConfig = {
-        centerMode: false,
-        centerPadding: "0",
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        dots: false,
-        arrows: false,
-        infinite: true,
-        speed: 600,
-        autoplay: false, // Désactivé pour contrôle manuel
-        pauseOnHover: false,
-        cssEase: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-        responsive: [
-          {
-            breakpoint: 980, // Changé de 1200 à 980
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-            },
-          },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
-          },
-        ],
-      };
-
-      try {
-        this.firstCarousel.slick(firstConfig);
-      } catch (error) {
-        // Fallback silencieux si l'initialisation échoue
-        this.fallbackDisplay();
-      }
-    },
-
-    setupSecondCarousel: function () {
-      // Configuration pour le second carrousel - PAS d'autoplay
-      const secondConfig = {
-        centerMode: false,
-        centerPadding: "0",
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        dots: false,
-        arrows: false,
-        infinite: true,
-        speed: 600,
-        autoplay: false, // Désactivé pour contrôle manuel
-        pauseOnHover: false,
-        cssEase: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-        responsive: [
-          {
-            breakpoint: 980, // Changé de 1200 à 980
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-            },
-          },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
-          },
-        ],
-      };
-
-      try {
-        this.secondCarousel.slick(secondConfig);
-      } catch (error) {
-        // Fallback silencieux si l'initialisation échoue
-      }
-    },
-
-    setupCarousels: function () {
-      // Configuration pour le premier carrousel - PAS d'autoplay
-      const firstConfig = {
-        centerMode: false,
-        centerPadding: "0",
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        dots: false,
-        arrows: false,
-        infinite: true,
-        speed: 600,
-        autoplay: false, // Désactivé pour contrôle manuel
-        pauseOnHover: false,
-        cssEase: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-        responsive: [
-          {
-            breakpoint: 980, // Changé de 1200 à 980
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-            },
-          },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
-          },
-        ],
-      };
-
-      // Configuration pour le second carrousel - PAS d'autoplay
-      const secondConfig = {
-        centerMode: false,
-        centerPadding: "0",
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        dots: false,
-        arrows: false,
-        infinite: true,
-        speed: 600,
-        autoplay: false, // Désactivé pour contrôle manuel
-        pauseOnHover: false,
-        cssEase: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
-        responsive: [
-          {
-            breakpoint: 980, // Changé de 1200 à 980
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 1,
-            },
-          },
-          {
-            breakpoint: 768,
-            settings: {
-              slidesToShow: 1,
-              slidesToScroll: 1,
-            },
-          },
-        ],
-      };
-
-      try {
-        this.firstCarousel.slick(firstConfig);
-      } catch (error) {
-        // Fallback silencieux si l'initialisation échoue
-      }
-
-      try {
-        this.secondCarousel.slick(secondConfig);
-      } catch (error) {
-        // Fallback silencieux si l'initialisation échoue
-      }
-      // Vérifier que les carrousels sont bien initialisés
-      setTimeout(() => {
-        const firstInitialized =
-          this.firstCarousel.hasClass("slick-initialized");
-        const secondInitialized =
-          this.secondCarousel.hasClass("slick-initialized");
-
-        if (!firstInitialized || !secondInitialized) {
-          this.fallbackDisplay();
-        } else {
-          // Démarrer le système d'alternance
-          this.startAlternatingSystem();
-        }
-      }, 500);
-    },
-    startAlternatingSystem: function () {
-      this.isAlternating = true;
-      this.currentActiveRow = 1;
-
-      // Nettoyer tous les timers existants
-      if (this.alternateTimer) {
-        clearTimeout(this.alternateTimer);
-      }
-
-      // Démarrer immédiatement la première alternance
-      this.alternateTimer = setTimeout(() => {
-        this.alternateCarousels();
-      }, 1000);
-    },
-
-    handleScreenSize: function () {
-      if ($(window).width() < 768) {
-        // Sur mobile et tablette, masquer le second carrousel et arrêter l'alternance
-        this.secondCarousel.closest(".carousel-row").hide();
-        this.isAlternating = false;
-      } else {
-        // Sur desktop, afficher les deux carrousels et reprendre l'alternance
-        this.secondCarousel.closest(".carousel-row").show();
-        if (!this.isAlternating) {
-          this.isAlternating = true;
-          this.startAlternatingSystem();
-        }
-      }
-    },
-    alternateCarousels: function () {
-      if (!this.isAlternating) {
-        return;
-      }
-
-      // Nettoyer le timer précédent
-      if (this.alternateTimer) {
-        clearTimeout(this.alternateTimer);
-      }
-
-      if (this.currentActiveRow === 1) {
-        // Faire défiler le premier carrousel SEULEMENT
-        this.firstCarousel.slick("slickNext");
-
-        // Programmer le passage au second carrousel après 4 secondes
-        this.alternateTimer = setTimeout(() => {
-          if (this.isAlternating) {
-            this.currentActiveRow = 2;
-            this.alternateCarousels();
-          }
-        }, 4000);
-      } else {
-        // Faire défiler le second carrousel SEULEMENT
-        this.secondCarousel.slick("slickNext");
-
-        // Programmer le retour au premier carrousel après 4 secondes
-        this.alternateTimer = setTimeout(() => {
-          if (this.isAlternating) {
-            this.currentActiveRow = 1;
-            this.alternateCarousels();
-          }
-        }, 4000);
-      }
-    },
-    bindEvents: function () {
-      $(window).on(
-        "resize",
-        Utils.debounce(() => {
-          this.handleScreenSize();
-        }, 250)
-      );
-      // Gestion du hover pour mettre en pause l'alternance
-      const carouselContainer = document.querySelector(
-        ".testimonials-carousel"
-      );
-      if (carouselContainer) {
-        carouselContainer.addEventListener("mouseenter", () => {
-          if (this.alternateTimer) {
-            clearTimeout(this.alternateTimer);
-          }
-        });
-
-        carouselContainer.addEventListener("mouseleave", () => {
-          // Reprendre l'alternance après un court délai
-          if (this.isAlternating) {
-            this.resumeTimer = setTimeout(() => {
-              this.alternateCarousels();
-            }, 2000);
-          }
-        });
-      }
-    },
-  };
-
   // ===== GESTION DU SMOOTH SCROLL =====
   const SmoothScroll = {
     init: function () {
@@ -620,6 +283,552 @@
       });
     },
   };
+  // ===== Gestion du carousel de témoignages =====
+  class TestimonialsCarousel {
+    constructor() {
+      // Configuration
+      this.config = {
+        slideSpeed: 600,
+        autoplayDelay: 2500,
+        resizeDelay: 250,
+        initDelay: 100,
+        hoverResumeDelay: 2000,
+        debug: false, // Mode debug pour développement
+      };
+
+      // État
+      this.state = {
+        isInitialized: false,
+        isAlternating: false,
+        currentActiveRow: 1,
+        alternateTimer: null,
+        resumeTimer: null,
+        errorCount: 0,
+        maxErrors: 3,
+      };
+
+      // Éléments DOM
+      this.elements = {
+        firstCarousel: null,
+        secondCarousel: null,
+        testimonialsSection: null,
+        carouselContainer: null,
+      };
+
+      // Utilitaire debounce optimisé
+      this.debounce = (func, wait) => {
+        let timeout;
+        return function executedFunction(...args) {
+          const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+          };
+          clearTimeout(timeout);
+          timeout = setTimeout(later, wait);
+        };
+      };
+
+      // Logger conditionnel
+      this.log = (message, type = "info") => {
+        if (this.config.debug) {
+          console[type](`[TestimonialsCarousel] ${message}`);
+        }
+      };
+    }
+
+    /**
+     * Initialisation principale avec gestion d'erreurs
+     */
+    init() {
+      try {
+        this.log("Début d'initialisation du carrousel");
+
+        // Vérifier jQuery
+        if (typeof $ === "undefined") {
+          this.log("jQuery non disponible", "warn");
+          return;
+        }
+
+        // Nettoyer les timers existants
+        this.cleanupTimers();
+
+        // Attendre que le DOM soit prêt
+        setTimeout(() => {
+          try {
+            this.setupElements();
+            this.initializeCarousels();
+          } catch (error) {
+            this.handleError("Erreur lors de l'initialisation", error);
+          }
+        }, this.config.initDelay);
+      } catch (error) {
+        this.handleError("Erreur critique d'initialisation", error);
+      }
+    }
+
+    /**
+     * Gestion centralisée des erreurs
+     */
+    handleError(message, error) {
+      this.state.errorCount++;
+      this.log(`${message}: ${error.message}`, "error");
+
+      // Si trop d'erreurs, utiliser l'affichage de secours
+      if (this.state.errorCount >= this.state.maxErrors) {
+        this.log(
+          "Trop d'erreurs, basculement vers l'affichage de secours",
+          "warn"
+        );
+        this.fallbackDisplay();
+      }
+    }
+
+    /**
+     * Configuration des éléments DOM avec vérifications
+     */
+    setupElements() {
+      this.log("Configuration des éléments DOM");
+
+      this.elements.firstCarousel = $(".testimonials-slider--first");
+      this.elements.secondCarousel = $(".testimonials-slider--second");
+      this.elements.testimonialsSection =
+        document.querySelector("#testimonials");
+      this.elements.carouselContainer = document.querySelector(
+        ".testimonials-carousel"
+      );
+
+      // Vérifier que les éléments essentiels existent
+      if (!this.elements.firstCarousel.length) {
+        throw new Error("Premier carrousel non trouvé");
+      }
+
+      // Forcer la visibilité de la section
+      if (this.elements.testimonialsSection) {
+        this.elements.testimonialsSection.style.display = "block";
+        this.elements.testimonialsSection.style.visibility = "visible";
+        this.elements.testimonialsSection.style.opacity = "1";
+        this.log("Section témoignages rendue visible");
+      }
+    }
+
+    /**
+     * Initialisation des carrousels
+     */
+    initializeCarousels() {
+      if (!this.elements.firstCarousel.length) {
+        this.fallbackDisplay();
+        return;
+      }
+
+      // Détruire les instances existantes
+      this.destroyExistingCarousels();
+
+      // Initialiser les carrousels
+      this.setupFirstCarousel();
+
+      if (this.elements.secondCarousel.length) {
+        this.setupSecondCarousel();
+
+        // Vérifier l'initialisation puis démarrer le système
+        setTimeout(() => {
+          if (this.validateInitialization()) {
+            this.startAlternatingSystem();
+            this.bindEvents();
+            this.handleScreenSize();
+            this.state.isInitialized = true;
+          } else {
+            this.fallbackDisplay();
+          }
+        }, 200);
+      }
+    }
+
+    /**
+     * Destruction des instances Slick existantes
+     */
+    destroyExistingCarousels() {
+      if (this.elements.firstCarousel.hasClass("slick-initialized")) {
+        try {
+          this.elements.firstCarousel.slick("unslick");
+        } catch (error) {
+          console.warn("Erreur destruction premier carrousel:", error);
+        }
+      }
+
+      if (this.elements.secondCarousel.hasClass("slick-initialized")) {
+        try {
+          this.elements.secondCarousel.slick("unslick");
+        } catch (error) {
+          console.warn("Erreur destruction second carrousel:", error);
+        }
+      }
+    }
+
+    /**
+     * Configuration du premier carrousel
+     */
+    setupFirstCarousel() {
+      const config = this.getCarouselConfig();
+
+      try {
+        this.elements.firstCarousel.slick(config);
+      } catch (error) {
+        console.error("Erreur initialisation premier carrousel:", error);
+        this.fallbackDisplay();
+      }
+    }
+
+    /**
+     * Configuration du second carrousel
+     */
+    setupSecondCarousel() {
+      const config = this.getCarouselConfig();
+
+      try {
+        this.elements.secondCarousel.slick(config);
+      } catch (error) {
+        console.error("Erreur initialisation second carrousel:", error);
+      }
+    }
+
+    /**
+     * Configuration commune des carrousels
+     */
+    getCarouselConfig() {
+      return {
+        centerMode: false,
+        centerPadding: "0",
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: false,
+        infinite: true,
+        speed: this.config.slideSpeed,
+        autoplay: false,
+        pauseOnHover: false,
+        variableWidth: false,
+        adaptiveHeight: false,
+        cssEase: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        responsive: [
+          {
+            breakpoint: 980,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              variableWidth: false,
+            },
+          },
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              variableWidth: false,
+            },
+          },
+        ],
+      };
+    }
+
+    /**
+     * Validation de l'initialisation
+     */
+    validateInitialization() {
+      const firstInitialized =
+        this.elements.firstCarousel.hasClass("slick-initialized");
+      const secondInitialized =
+        this.elements.secondCarousel.hasClass("slick-initialized");
+
+      return firstInitialized && secondInitialized;
+    }
+
+    /**
+     * Affichage de secours sans JavaScript
+     */
+    fallbackDisplay() {
+      if (this.elements.testimonialsSection) {
+        this.elements.testimonialsSection.classList.add("js-disabled");
+
+        const testimonialItems =
+          this.elements.testimonialsSection.querySelectorAll(
+            ".testimonial-item"
+          );
+        testimonialItems.forEach((item) => {
+          item.style.display = "inline-block";
+          item.style.width = "300px";
+          item.style.margin = "0 15px 40px";
+          item.style.verticalAlign = "top";
+        });
+      }
+    }
+
+    /**
+     * Démarrage du système d'alternance
+     */
+    startAlternatingSystem() {
+      this.state.isAlternating = true;
+      this.state.currentActiveRow = 1;
+
+      this.cleanupTimers();
+
+      this.state.alternateTimer = setTimeout(() => {
+        this.alternateCarousels();
+      }, 1000);
+    }
+
+    /**
+     * Alternance entre les carrousels
+     */
+    alternateCarousels() {
+      if (!this.state.isAlternating) return;
+
+      // Nettoyer le timer précédent
+      if (this.state.alternateTimer) {
+        clearTimeout(this.state.alternateTimer);
+        this.state.alternateTimer = null;
+      }
+
+      // Vérifier que les carrousels existent et sont initialisés
+      if (!this.validateCarouselState()) return;
+
+      if (this.state.currentActiveRow === 1) {
+        this.slideCarousel(this.elements.firstCarousel, () => {
+          this.state.currentActiveRow = 2;
+          this.scheduleNextAlternation();
+        });
+      } else {
+        this.slideCarousel(this.elements.secondCarousel, () => {
+          this.state.currentActiveRow = 1;
+          this.scheduleNextAlternation();
+        });
+      }
+    }
+
+    /**
+     * Faire défiler un carrousel avec gestion d'erreurs optimisée
+     */
+    slideCarousel(carousel, callback) {
+      if (!carousel || !carousel.hasClass("slick-initialized")) {
+        this.log("Carrousel non initialisé ou invalide", "warn");
+        return;
+      }
+
+      try {
+        carousel.slick("slickNext");
+        this.log("Slide suivant exécuté");
+        if (callback && typeof callback === "function") {
+          callback();
+        }
+      } catch (error) {
+        this.handleError("Erreur lors du défilement du carrousel", error);
+      }
+    }
+
+    /**
+     * Programmer la prochaine alternance
+     */
+    scheduleNextAlternation() {
+      if (this.state.isAlternating) {
+        this.state.alternateTimer = setTimeout(() => {
+          this.alternateCarousels();
+        }, this.config.autoplayDelay);
+      }
+    }
+
+    /**
+     * Validation de l'état des carrousels
+     */
+    validateCarouselState() {
+      return (
+        this.elements.firstCarousel &&
+        this.elements.secondCarousel &&
+        this.elements.firstCarousel.hasClass("slick-initialized") &&
+        this.elements.secondCarousel.hasClass("slick-initialized")
+      );
+    }
+
+    /**
+     * Gestion responsive
+     */
+    handleScreenSize() {
+      const isMobile = $(window).width() < 768;
+
+      if (isMobile) {
+        // Masquer le second carrousel sur mobile
+        this.elements.secondCarousel.closest(".carousel-row").hide();
+        this.pauseAlternation();
+      } else {
+        // Afficher les deux carrousels sur desktop
+        this.elements.secondCarousel.closest(".carousel-row").show();
+        if (!this.state.isAlternating) {
+          this.resumeAlternation();
+        }
+      }
+    }
+
+    /**
+     * Pause de l'alternance
+     */
+    pauseAlternation() {
+      this.state.isAlternating = false;
+      this.cleanupTimers();
+    }
+
+    /**
+     * Reprise de l'alternance
+     */
+    resumeAlternation() {
+      if (this.state.isInitialized && this.validateCarouselState()) {
+        this.startAlternatingSystem();
+      }
+    }
+
+    /**
+     * Liaison des événements avec optimisations
+     */
+    bindEvents() {
+      this.log("Liaison des événements");
+
+      // Gestion du redimensionnement avec namespace pour éviter les conflits
+      $(window).on(
+        "resize.testimonialsCarousel",
+        this.debounce(() => {
+          this.handleScreenSize();
+        }, this.config.resizeDelay)
+      );
+
+      // Gestion du hover avec méthodes liées
+      if (this.elements.carouselContainer) {
+        this.elements.carouselContainer.addEventListener(
+          "mouseenter",
+          this.handleMouseEnter
+        );
+        this.elements.carouselContainer.addEventListener(
+          "mouseleave",
+          this.handleMouseLeave
+        );
+      }
+    }
+
+    /**
+     * Nettoyage des timers
+     */
+    cleanupTimers() {
+      if (this.state.alternateTimer) {
+        clearTimeout(this.state.alternateTimer);
+        this.state.alternateTimer = null;
+      }
+
+      if (this.state.resumeTimer) {
+        clearTimeout(this.state.resumeTimer);
+        this.state.resumeTimer = null;
+      }
+    }
+
+    /**
+     * Destruction complète avec nettoyage mémoire
+     */
+    destroy() {
+      this.log("Destruction de l'instance carrousel");
+
+      // Nettoyer les timers
+      this.cleanupTimers();
+
+      // Détruire les carrousels Slick
+      this.destroyExistingCarousels();
+
+      // Supprimer les événements avec nettoyage mémoire
+      $(window).off("resize.testimonialsCarousel");
+
+      if (this.elements.carouselContainer) {
+        this.elements.carouselContainer.removeEventListener(
+          "mouseenter",
+          this.handleMouseEnter
+        );
+        this.elements.carouselContainer.removeEventListener(
+          "mouseleave",
+          this.handleMouseLeave
+        );
+      }
+
+      // Nettoyer les références
+      this.elements = {
+        firstCarousel: null,
+        secondCarousel: null,
+        testimonialsSection: null,
+        carouselContainer: null,
+      };
+
+      this.state.isInitialized = false;
+      this.log("Instance détruite avec succès");
+    }
+
+    /**
+     * Handlers d'événements optimisés (évite les fuites mémoire)
+     */
+    handleMouseEnter = () => {
+      this.pauseAlternation();
+    };
+
+    handleMouseLeave = () => {
+      this.cleanupTimers();
+      if (this.state.isInitialized) {
+        this.state.resumeTimer = setTimeout(() => {
+          this.resumeAlternation();
+        }, this.config.hoverResumeDelay);
+      }
+    };
+  }
+
+  // ===================================================================
+  // ## INITIALISATION AUTOMATIQUE ET SÉCURISÉE
+  // ===================================================================
+
+  /**
+   * Initialisation sécurisée du carrousel au chargement du DOM
+   * Vérifie la disponibilité des dépendances avant l'initialisation
+   */
+  document.addEventListener("DOMContentLoaded", () => {
+    // Vérifier les dépendances
+    if (typeof $ === "undefined") {
+      console.warn("jQuery non disponible - Carrousel désactivé");
+      return;
+    }
+
+    if (typeof $.fn.slick === "undefined") {
+      console.warn("Slick Carousel non disponible - Carrousel désactivé");
+      return;
+    }
+
+    try {
+      // Créer l'instance globale pour un accès externe si nécessaire
+      window.testimonialsCarousel = new TestimonialsCarousel();
+
+      // Initialiser le carrousel
+      window.testimonialsCarousel.init();
+
+      console.log("Carrousel de témoignages initialisé avec succès");
+    } catch (error) {
+      console.error("Erreur lors de l'initialisation du carrousel:", error);
+    }
+  });
+
+  /**
+   * Nettoyage automatique lors du déchargement de la page
+   * Évite les fuites mémoire et libère les ressources
+   */
+  window.addEventListener("beforeunload", () => {
+    if (
+      window.testimonialsCarousel &&
+      typeof window.testimonialsCarousel.destroy === "function"
+    ) {
+      try {
+        window.testimonialsCarousel.destroy();
+      } catch (error) {
+        console.warn("Erreur lors de la destruction du carrousel:", error);
+      }
+    }
+  });
 
   // ===== GESTION DU CTA BANNER =====
   const CTABanner = {
@@ -730,7 +939,7 @@
     MobileMenu.init();
     // Rendre MobileMenu accessible globalement pour les dropdowns
     window.MobileMenu = MobileMenu;
-    TestimonialsCarousel.init();
+
     SmoothScroll.init();
     CTABanner.init();
     AnimationSystem.init();
@@ -1033,9 +1242,11 @@
       });
       return isValid;
     }
+
     /**
      * Soumission du formulaire via Web3Forms
-     */ async function submitForm() {
+     */
+    async function submitForm() {
       // Vérification de sécurité que form est bien un élément de formulaire
       if (!form || form.tagName !== "FORM") {
         console.error("Erreur: élément de formulaire non trouvé");
@@ -1349,6 +1560,9 @@
     WebsitePage.init();
   });
 })();
+
+// ===== Variables globales pour les formulaires SO =====
+var soBody, soBodyOriginalStyleHeight, soBodyOriginalStyleOverflow;
 
 function focusWidgetForm(event) {
   event.preventDefault(); // évite le scroll brutal
@@ -1761,7 +1975,8 @@ function closeSoModal() {
     const isPageTarification =
       document.body.classList.contains("page-tarification") ||
       window.location.pathname.includes("tarification") ||
-      document.getElementById("services-web");
+      document.getElementById("services-web") ||
+      document.getElementById("services-articles");
 
     if (!isPageTarification) {
       return;
@@ -2289,7 +2504,7 @@ class TimelineIconsAnimation {
   }
 
   init() {
-    this.icons = document.querySelectorAll(".timeline-new li .date, .timeline-new li .title");
+    this.icons = document.querySelectorAll(".timeline__event__icon i");
 
     if (this.icons.length === 0) {
       console.warn("Timeline Icons Animation: Aucune icône trouvée");
@@ -2335,7 +2550,9 @@ class TimelineIconsAnimation {
   animateIcon(icon) {
     // Vérification de sécurité
     if (!icon || !icon.classList) {
-      console.warn("Timeline Icons Animation: Élément invalide pour l'animation");
+      console.warn(
+        "Timeline Icons Animation: Élément invalide pour l'animation"
+      );
       return;
     }
 

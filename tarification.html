@@ -25,10 +25,7 @@
     />
 
     <!-- SEO Meta Tags (conservés) -->
-    <meta
-      name="keywords"
-      content="tarifs audit SEO, prix référencement, formules SEO PME, tarification transparente"
-    />
+
     <meta name="author" content="NOVA Business" />
     <meta name="robots" content="index, follow" />
 
@@ -252,6 +249,24 @@
         }
       }
     </script>
+
+    <!-- Dépendances pour carrousel de témoignages -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <!-- Slick Slider CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+      media="print"
+      onload="this.media='all'"
+    />
   </head>
 
   <body>
@@ -487,34 +502,32 @@
     <main class="main-content">
       <!-- Section Hero Tarification -->
       <section class="pricing-hero">
-        <div class="container">
-          <h1 id="pricing-title" class="pricing-hero-title h1 text-center">
-            Nos offres et tarifs
-          </h1>
+        <main class="pricing-hero-main">
+          <div class="container">
+            <h1 id="pricing-title" class="pricing-hero-title h1 text-center">
+              Nos offres et tarifs
+            </h1>
 
-          <!-- Message de valeur -->
-          <div class="pricing-promotion" role="note" aria-live="polite">
-            <p class="promotion-text">
-              Gagnez en visibilité, corrigez les freins SEO qui bloquent votre
-              croissance et attirez plus de clients.
-            </p>
-            <p class="promotion-subtitle">
-              NOVA Business, agence experte en SEO, développe pour ses clients
-              des solutions concrètes pour améliorer référencement, visibilité
-              et chiffre d’affaires.
-            </p>
+            <!-- Message de valeur -->
+            <div class="pricing-promotion" role="note" aria-live="polite">
+              <p class="promotion-text">
+                Gagnez en visibilité, corrigez les freins SEO qui bloquent votre
+                croissance et attirez plus de clients.
+              </p>
+            </div>
           </div>
-        </div>
+          <div class="pricing-hero-image"></div>
+        </main>
       </section>
 
       <!-- Section Cards de Tarification -->
       <section id="seo-pricing" class="pricing-main">
         <div>
           <div class="seo-pricing-titles">
-            <h2>Choisissez votre offre d'audit SEO</h2>
-            <h3>
+            <h2>Choisissez votre offre d'audit&nbsp;SEO</h2>
+            <h3 class="text-center">
               Rapports d’audit SEO pour devenir les premiers sur Google. Attirez
-              du trafic qualifié et développez votre entreprise.
+              du trafic qualifié et développez&nbsp;votre&nbsp;entreprise.
             </h3>
           </div>
           <div
@@ -633,8 +646,8 @@
               </div>
 
               <p class="card-target">
-                <strong>Pour qui&nbsp;?</strong> Dirigeants & équipes qui veulent un
-                plan prêt à exécuter.
+                <strong>Pour qui&nbsp;?</strong> Dirigeants & équipes qui
+                veulent un plan prêt à exécuter.
               </p>
 
               <footer class="card-footer">
@@ -700,8 +713,8 @@
                 </ul>
               </div>
               <p class="card-target">
-                <strong>Pour qui&nbsp;?</strong> Entreprises qui veulent passer à
-                l'action rapidement, accompagnées par des experts en SEO.
+                <strong>Pour qui&nbsp;?</strong> Entreprises qui veulent passer
+                à l'action rapidement, accompagnées par des experts en SEO.
               </p>
 
               <footer class="card-footer">
@@ -854,13 +867,15 @@
       </section>
 
       <section class="pricing-website">
-        <h2 class="text-center">Nos solutions de création de sites web</h2>
+        <h2 class="text-center">
+          Nos solutions de création de&nbsp;sites&nbsp;web
+        </h2>
         <p class="text-center pricing-website-subtitle">
-          Découvrez nos offres adaptées à chaque projet et budget
+          Découvrez nos offres adaptées à chaque projet&nbsp;et&nbsp;budget
         </p>
 
         <section id="services-web" class="section-tabs-scroll-snap">
-          <h2 class="sr-only">Services de création de sites web</h2>
+          <h2 class="sr-only">Services de création de sites&nbsp;web</h2>
           <nav
             class="scroll-snap-nav"
             role="tablist"
@@ -945,13 +960,13 @@
                 <div class="card-pricing" aria-labelledby="title-site-vitrine">
                   <div class="price-container">
                     <span class="price-prefix">à partir de</span>
-                    <span class="price">1499€</span>
+                    <span class="price">2590€</span>
                     <span class="price-period">TTC</span>
                   </div>
                 </div>
 
                 <p class="card-tagline">
-                  Site professionnel moderne et optimisé SEO.
+                  Site professionnel moderne et optimisé&nbsp;SEO.
                 </p>
 
                 <div class="card-features">
@@ -1011,7 +1026,7 @@
                 <div class="card-pricing" aria-labelledby="title-site-onepage">
                   <div class="price-container">
                     <span class="price-prefix">à partir de</span>
-                    <span class="price">799€</span>
+                    <span class="price">1290€</span>
                     <span class="price-period">TTC</span>
                   </div>
                 </div>
@@ -1032,8 +1047,9 @@
                 </div>
 
                 <p class="card-target">
-                  <strong>Pour qui&nbsp;?</strong> Entrepreneurs, startups et petites
-                  entreprises qui veulent une présence web efficace et directe.
+                  <strong>Pour qui&nbsp;?</strong> Entrepreneurs, startups et
+                  petites entreprises qui veulent une présence web efficace et
+                  directe.
                 </p>
 
                 <div class="card-footer">
@@ -1076,7 +1092,7 @@
                 >
                   <div class="price-container">
                     <span class="price-prefix">à partir de</span>
-                    <span class="price">2499€</span>
+                    <span class="price">4590€</span>
                     <span class="price-period">TTC</span>
                   </div>
                 </div>
@@ -1161,8 +1177,8 @@
                 </div>
 
                 <p class="card-target">
-                  <strong>Pour qui&nbsp;?</strong> Entreprises avec un site obsolète
-                  qui veulent moderniser leur image et améliorer leurs
+                  <strong>Pour qui&nbsp;?</strong> Entreprises avec un site
+                  obsolète qui veulent moderniser leur image et améliorer leurs
                   performances.
                 </p>
 
@@ -1206,7 +1222,7 @@
                 >
                   <div class="price-container">
                     <span class="price-prefix">à partir de</span>
-                    <span class="price">599€</span>
+                    <span class="price">1290€</span>
                     <span class="price-period">TTC</span>
                   </div>
                 </div>
@@ -1227,8 +1243,9 @@
                 </div>
 
                 <p class="card-target">
-                  <strong>Pour qui&nbsp;?</strong> Entrepreneurs et marketeurs qui
-                  veulent maximiser leurs conversions sur une offre spécifique.
+                  <strong>Pour qui&nbsp;?</strong> Entrepreneurs et marketeurs
+                  qui veulent maximiser leurs conversions sur une offre
+                  spécifique.
                 </p>
 
                 <div class="card-footer">
@@ -1290,9 +1307,9 @@
                 </div>
 
                 <p class="card-target">
-                  <strong>Pour qui&nbsp;?</strong> Grandes entreprises et projets
-                  complexes nécessitant des fonctionnalités spécifiques et
-                  personnalisées.
+                  <strong>Pour qui&nbsp;?</strong> Entreprises nécessitant des
+                  fonctionnalités spécifiques et personnalisées.
+                  Développement&nbsp;sur-mesure.
                 </p>
 
                 <div class="card-footer">
@@ -1336,9 +1353,8 @@
               </div>
               <h3 class="h3 audit-category-title">Design Responsive</h3>
               <p class="audit-category-description">
-                Interface moderne qui s'adapte parfaitement à tous les
-                écrans&nbsp;: mobile, tablette et desktop pour une expérience
-                optimale.
+                Interface moderne qui s'adapte parfaitement à tous les écrans
+                pour une expérience optimale.
               </p>
             </div>
 
@@ -1355,9 +1371,8 @@
               </div>
               <h3 class="h3 audit-category-title">Optimisation SEO</h3>
               <p class="audit-category-description">
-                Structure optimisée pour les moteurs de recherche, balises meta,
-                SEO local, stratégie de mots clés pour votre domaine pour
-                améliorer votre visibilité.
+                Structure optimisée, balises meta, SEO local, stratégie de mots
+                clés pour votre visibilité.
               </p>
             </div>
 
@@ -1374,8 +1389,8 @@
               </div>
               <h3 class="h3 audit-category-title">Performance</h3>
               <p class="audit-category-description">
-                Sites ultra-rapides avec optimisation des images, cache
-                intelligent et respect des Core Web Vitals de Google.
+                Sites ultra-rapides avec optimisation des images, du cache et
+                respect des Core Web Vitals.
               </p>
             </div>
 
@@ -1392,8 +1407,8 @@
               </div>
               <h3 class="h3 audit-category-title">Sécurité</h3>
               <p class="audit-category-description">
-                Protection avancée contre les menaces avec certificats SSL, code
-                propre et sécurisés, et mises à jour de sécurité.
+                Protection contre les menaces avec certificats SSL, code propre
+                et sécurisés, et mises à jour de sécurité.
               </p>
             </div>
 
@@ -1410,8 +1425,8 @@
               </div>
               <h3 class="h3 audit-category-title">Intégrations</h3>
               <p class="audit-category-description">
-                Connexions natives avec vos outils&nbsp;: Google Analytics,
-                réseaux sociaux, systèmes de paiement, API et automatisations.
+                Connexions avec vos outils&nbsp;: Google Analytics, réseaux
+                sociaux, systèmes de paiement, API et automatisations.
               </p>
             </div>
 
@@ -1428,9 +1443,8 @@
               </div>
               <h3 class="h3 audit-category-title">Support</h3>
               <p class="audit-category-description">
-                Accompagnement complet, support technique et maintenance,
-                conseils pour optimiser vos conversions et booster votre
-                activité.
+                Accompagnement, support technique et maintenance pour optimiser
+                vos conversions.
               </p>
             </div>
           </div>
@@ -1443,7 +1457,7 @@
           </nav>
         </div>
       </section>
-
+      
       <!-- Section FAQ -->
       <section
         class="faq-section"
@@ -1560,7 +1574,8 @@
                     aria-controls="faq-3"
                   >
                     <span class="faq-question-text"
-                      >Combien de temps faut-il pour recevoir mon audit&nbsp;?</span
+                      >Combien de temps faut-il pour recevoir mon
+                      audit&nbsp;?</span
                     >
                     <svg
                       class="faq-chevron"
@@ -1597,7 +1612,7 @@
                   >
                     <span class="faq-question-text"
                       >Pouvez-vous m'aider à implémenter les recommandations
-                     &nbsp;?</span
+                      &nbsp;?</span
                     >
                     <svg
                       class="faq-chevron"
@@ -1633,7 +1648,8 @@
                     aria-controls="faq-5"
                   >
                     <span class="faq-question-text"
-                      >Puis-je utiliser votre service pour mes clients&nbsp;?</span
+                      >Puis-je utiliser votre service pour mes
+                      clients&nbsp;?</span
                     >
                     <svg
                       class="faq-chevron"
@@ -1671,7 +1687,7 @@
                   >
                     <span class="faq-question-text"
                       >Quels résultats puis-je attendre après un audit SEO
-                     &nbsp;?</span
+                      &nbsp;?</span
                     >
                     <svg
                       class="faq-chevron"
@@ -1742,9 +1758,8 @@
         </div>
       </section>
 
-      <!-- Section Témoignages -->
       <section
-        id="testimonials"
+        id="testimonials-pricing"
         class="pricing-testimonials-section"
         aria-labelledby="pricing-testimonials-title"
       >
@@ -2048,10 +2063,24 @@
           <ul class="footer-links">
             <li><a href="index.html" class="footer-link">Accueil</a></li>
             <li><a href="audit-seo.html" class="footer-link">Audit SEO</a></li>
-            <li><a href="website.html" class="footer-link">Création de Site Web</a></li>
-            <li><a href="articles.html" class="footer-link">Articles de Blog SEO</a></li>
-            <li><a href="contenus.html" class="footer-link">Community Management</a></li>
-            <li><a href="tarification.html" class="footer-link">Tarification</a></li>
+            <li>
+              <a href="website.html" class="footer-link"
+                >Création de Site Web</a
+              >
+            </li>
+            <li>
+              <a href="articles.html" class="footer-link"
+                >Articles de Blog SEO</a
+              >
+            </li>
+            <li>
+              <a href="contenus.html" class="footer-link"
+                >Community Management</a
+              >
+            </li>
+            <li>
+              <a href="tarification.html" class="footer-link">Tarification</a>
+            </li>
             <li><a href="a-propos.html" class="footer-link">À propos</a></li>
             <li><a href="contact.html" class="footer-link">Contact</a></li>
           </ul>
