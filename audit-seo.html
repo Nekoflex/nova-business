@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr" class="no-js">
   <head>
     <!-- Google tag (gtag.js) -->
@@ -48,7 +48,10 @@
       rel="preload"
       href="assets/css/style.bundle.levrai.css"
       as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
     <noscript
       ><link rel="stylesheet" href="assets/css/style.bundle.levrai.css"
@@ -165,7 +168,7 @@
             "name": "NOVA Business",
             "url": "https://www.nova-business.fr",
             "logo": "https://www.nova-business.fr/assets/img/Nova_business_logo.webp",
-            "description": "Agence SEO spécialisée dans l'audit et l'optimisation du référencement naturel pour les PME",
+            "description": "Agence web & SEO à Paris spécialisée dans la création de sites sur-mesure et le référencement naturel pour les PME",
             "foundingDate": "2020",
             "numberOfEmployees": "5-10",
             "address": {
@@ -331,7 +334,7 @@
           >
             <img
               src="assets/img/Nova_business_logo.webp"
-              alt="NOVA Business - Audit SEO"
+              alt="NOVA Business - Agence Web & SEO"
               class="logo-image"
             />
           </a>
@@ -352,18 +355,6 @@
                 <ul class="dropdown-menu" role="menu">
                   <li>
                     <a
-                      href="audit-seo.html"
-                      class="dropdown-link active"
-                      role="menuitem"
-                    >
-                      Audit SEO
-                      <span class="dropdown-description"
-                        >Votre site analysé par un expert SEO</span
-                      >
-                    </a>
-                  </li>
-                  <li>
-                    <a
                       href="website.html"
                       class="dropdown-link"
                       role="menuitem"
@@ -372,6 +363,18 @@
                       <span class="dropdown-description"
                         >Générez plus de prospects et de ventes grâce à votre
                         site optimisé en SEO</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="audit-seo.html"
+                      class="dropdown-link active"
+                      role="menuitem"
+                    >
+                      Audit SEO
+                      <span class="dropdown-description"
+                        >Votre site analysé par un expert SEO</span
                       >
                     </a>
                   </li>
@@ -480,18 +483,6 @@
             <ul class="mobile-dropdown-menu" role="menu">
               <li>
                 <a
-                  href="audit-seo.html"
-                  class="mobile-dropdown-link active"
-                  role="menuitem"
-                >
-                  Audit SEO
-                  <span class="mobile-dropdown-description"
-                    >Votre site analysé par un expert SEO</span
-                  >
-                </a>
-              </li>
-              <li>
-                <a
                   href="website.html"
                   class="mobile-dropdown-link"
                   role="menuitem"
@@ -500,6 +491,18 @@
                   <span class="mobile-dropdown-description"
                     >Générez plus de prospects et de ventes grâce à votre site
                     optimisé en SEO</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="audit-seo.html"
+                  class="mobile-dropdown-link active"
+                  role="menuitem"
+                >
+                  Audit SEO
+                  <span class="mobile-dropdown-description"
+                    >Votre site analysé par un expert SEO</span
                   >
                 </a>
               </li>
@@ -580,7 +583,7 @@
                   data-behaviour="be_in_touch"
                   data-title="Rapport du Site pour "
                   data-touch="Merci ! Nous avons bien reçu votre demande. Vous recevrez d&#039;ici une heure votre audit SEO gratuit par email."
-                  onsubmit="return soSubmit(this)"
+                  onsubmit="return soSubmit(this);"
                 >
                   <input
                     id="so-typeso1752003017"
@@ -1864,6 +1867,66 @@
         </div>
       </section>
 
+      <!-- Cross-sell Création de site web -->
+      <section
+        class="section"
+        aria-labelledby="crosssell-heading"
+        style="background: var(--color-beige)"
+      >
+        <div
+          class="container"
+          style="
+            max-width: 860px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 3.5rem 1.5rem;
+          "
+        >
+          <p
+            style="
+              text-transform: uppercase;
+              letter-spacing: 0.08em;
+              font-size: 0.8rem;
+              color: var(--color-text-lightest);
+              margin-bottom: 0.75rem;
+            "
+          >
+            Besoin d’aller plus loin&nbsp;?
+          </p>
+          <h2
+            id="crosssell-heading"
+            style="
+              font-size: clamp(1.6rem, 3vw, 2.4rem);
+              font-weight: 700;
+              color: var(--color-heading);
+              margin-bottom: 1rem;
+            "
+          >
+            Un bon SEO commence par un bon site.
+          </h2>
+          <p
+            style="
+              color: var(--color-text-lightest);
+              font-size: 1rem;
+              max-width: 600px;
+              margin: 0 auto 2rem;
+            "
+          >
+            Votre audit a révélé des faiblesses techniques&nbsp;? NOVA Business
+            conçoit des sites web sur-mesure, performants et optimisés SEO dès
+            la première ligne.
+          </p>
+          <a
+            href="website.html"
+            class="btn-dark"
+            style="display: inline-block"
+            aria-label="Découvrir nos offres de création de site web"
+          >
+            Découvrir nos offres web
+          </a>
+        </div>
+      </section>
+
       <!-- Section CTA Banner -->
       <section class="cta-banner">
         <div class="container cta-banner-container">
@@ -1959,12 +2022,12 @@
           <h3 class="footer-title">Navigation</h3>
           <ul class="footer-links">
             <li><a href="index.html" class="footer-link">Accueil</a></li>
-            <li><a href="audit-seo.html" class="footer-link">Audit SEO</a></li>
             <li>
               <a href="website.html" class="footer-link"
                 >Création de Site Web</a
               >
             </li>
+            <li><a href="audit-seo.html" class="footer-link">Audit SEO</a></li>
             <li>
               <a href="articles.html" class="footer-link"
                 >Articles de Blog SEO</a

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr" class="no-js">
   <head>
     <!-- Google tag (gtag.js) -->
@@ -78,7 +78,10 @@
       rel="preload"
       href="/assets/css/style.bundle.levrai.css"
       as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
     <noscript
       ><link rel="stylesheet" href="/assets/css/style.bundle.levrai.css"
@@ -124,7 +127,7 @@
         "@id": "https://nova-business.fr/#organization",
         "name": "NOVA Business",
         "url": "https://www.nova-business.fr",
-        "description": "Agence SEO spécialisée dans l'audit et l'optimisation du référencement naturel pour les PME",
+        "description": "Agence web & SEO à Paris spécialisée dans la création de sites sur-mesure et le référencement naturel pour les PME",
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+33783056260",
@@ -165,7 +168,7 @@
           >
             <img
               src="assets/img/Nova_business_logo.webp"
-              alt="NOVA Business - Audit SEO"
+              alt="NOVA Business - Agence Web & SEO"
               class="logo-image"
             />
           </a>
@@ -186,18 +189,6 @@
                 <ul class="dropdown-menu" role="menu">
                   <li>
                     <a
-                      href="audit-seo.html"
-                      class="dropdown-link"
-                      role="menuitem"
-                    >
-                      Audit SEO
-                      <span class="dropdown-description"
-                        >Votre site analysé par un expert SEO</span
-                      >
-                    </a>
-                  </li>
-                  <li>
-                    <a
                       href="website.html"
                       class="dropdown-link active"
                       role="menuitem"
@@ -206,6 +197,18 @@
                       <span class="dropdown-description"
                         >Générez plus de prospects et de ventes grâce à votre
                         site optimisé en SEO</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="audit-seo.html"
+                      class="dropdown-link"
+                      role="menuitem"
+                    >
+                      Audit SEO
+                      <span class="dropdown-description"
+                        >Votre site analysé par un expert SEO</span
                       >
                     </a>
                   </li>
@@ -314,18 +317,6 @@
             <ul class="mobile-dropdown-menu" role="menu">
               <li>
                 <a
-                  href="audit-seo.html"
-                  class="mobile-dropdown-link"
-                  role="menuitem"
-                >
-                  Audit SEO
-                  <span class="mobile-dropdown-description"
-                    >Votre site analysé par un expert SEO</span
-                  >
-                </a>
-              </li>
-              <li>
-                <a
                   href="website.html"
                   class="mobile-dropdown-link active"
                   role="menuitem"
@@ -334,6 +325,18 @@
                   <span class="mobile-dropdown-description"
                     >Générez plus de prospects et de ventes grâce à votre site
                     optimisé en SEO</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="audit-seo.html"
+                  class="mobile-dropdown-link"
+                  role="menuitem"
+                >
+                  Audit SEO
+                  <span class="mobile-dropdown-description"
+                    >Votre site analysé par un expert SEO</span
                   >
                 </a>
               </li>
@@ -400,27 +403,27 @@
           </h3>
           <img
             src="assets/img/gojob_logo_client.webp"
-            alt="GoJob fait confiance à NOVA Business pour son SEO"
+            alt="GoJob - client NOVA Business, agence web"
             class="client-logo"
           />
           <img
             src="assets/img/clic_campus_logo_client.webp"
-            alt="Clic Campus optimise son SEO avec NOVA Business"
+            alt="Clic Campus - client NOVA Business, agence web"
             class="client-logo"
           />
           <img
             src="assets/img/akeneo_logo_client.webp"
-            alt="Akeneo partenaire SEO de NOVA Business"
+            alt="Akeneo - client NOVA Business, agence web"
             class="client-logo"
           />
           <img
             src="assets/img/SIMONE_logo.webp"
-            alt="SIMONE agence d'image de marque utilise les services SEO de NOVA Business"
+            alt="SIMONE - client NOVA Business, création de site web"
             class="client-logo"
           />
           <img
             src="assets/img/skilleos-logo-client.webp"
-            alt="Skilleos confie son SEO à NOVA Business"
+            alt="Skilleos - client NOVA Business, agence web"
             class="client-logo"
             loading="lazy"
           />
@@ -1079,9 +1082,8 @@
               </div>
 
               <p class="card-target">
-                <strong>Pour qui&nbsp;?</strong> Entrepreneurs et marketeurs
-                  qui veulent maximiser leurs conversions sur une offre
-                  spécifique.
+                <strong>Pour qui&nbsp;?</strong> Entrepreneurs et marketeurs qui
+                veulent maximiser leurs conversions sur une offre spécifique.
               </p>
 
               <div class="card-footer">
@@ -1127,7 +1129,9 @@
                 </ul>
               </div>
               <p class="card-target">
-                <strong>Pour qui&nbsp;?</strong> Entreprises nécessitant des fonctionnalités spécifiques et personnalisées. Développement&nbsp;sur-mesure.
+                <strong>Pour qui&nbsp;?</strong> Entreprises nécessitant des
+                fonctionnalités spécifiques et personnalisées.
+                Développement&nbsp;sur-mesure.
               </p>
 
               <div class="card-footer">
@@ -1547,8 +1551,12 @@
           <h3 class="footer-title">Navigation</h3>
           <ul class="footer-links">
             <li><a href="index.html" class="footer-link">Accueil</a></li>
+            <li>
+              <a href="website.html" class="footer-link"
+                >Création de Site Web</a
+              >
+            </li>
             <li><a href="audit-seo.html" class="footer-link">Audit SEO</a></li>
-            <li><a href="website.html" class="footer-link">Création de Site Web</a></li>
             <li>
               <a href="articles.html" class="footer-link"
                 >Articles de Blog SEO</a

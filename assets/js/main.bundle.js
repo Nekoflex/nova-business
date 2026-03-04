@@ -216,17 +216,7 @@
     },
 
     updateHeader: function () {
-      const shouldBeScrolled = this.lastScrollY > this.scrollThreshold;
-
-      if (shouldBeScrolled !== this.isScrolled) {
-        this.isScrolled = shouldBeScrolled;
-
-        if (this.isScrolled) {
-          this.header.classList.add("is-scrolled");
-        } else {
-          this.header.classList.remove("is-scrolled");
-        }
-      }
+      // Rétrécissement au scroll désactivé : la navbar garde sa taille initiale
     },
 
     handleResize: function () {

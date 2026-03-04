@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr" class="no-js">
   <head>
     <!-- Google tag (gtag.js) -->
@@ -17,10 +17,10 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Audit SEO Gratuit +100 Critères Analysés | NOVA Business</title>
+    <title>Création de Site Web Sur-Mesure Optimisé SEO | NOVA Business</title>
     <meta
       name="description"
-      content="Recevez votre audit SEO gratuit en 1h avec NOVA Business. Plus de 100 critères analysés par nos experts pour booster votre référencement naturel."
+      content="NOVA Business crée votre site web sur-mesure, performant et optimisé SEO dès la première ligne. Sites vitrines, e-commerce, landing pages — conçus pour convertir et dominer Google."
     />
 
     <!-- SEO Meta Tags -->
@@ -35,11 +35,11 @@
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Recevez votre audit SEO gratuit en 1h avec NOVA Business. Plus de 100 critères analysés par nos experts pour booster votre référencement naturel."
+      content="Création de Site Web Sur-Mesure Optimisé SEO | NOVA Business"
     />
     <meta
       property="og:description"
-      content="Recevez votre audit SEO gratuit en 1h avec NOVA Business. Plus de 100 critères analysés par nos experts pour booster votre référencement naturel."
+      content="NOVA Business crée votre site web sur-mesure, performant et optimisé SEO dès la première ligne. Sites vitrines, e-commerce, landing pages — conçus pour convertir et dominer Google."
     />
     <meta property="og:url" content="https://www.nova-business.fr" />
     <meta property="og:site_name" content="NOVA Business" />
@@ -48,18 +48,21 @@
       property="og:image"
       content="https://www.nova-business.fr/assets/img/Nova_business_logo.webp"
     />
-    <meta property="og:image:alt" content="NOVA Business - Audit SEO Gratuit" />
+    <meta
+      property="og:image:alt"
+      content="NOVA Business - Création de Site Web"
+    />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@nova_business" />
     <meta
       name="twitter:title"
-      content="Audit SEO Gratuit +100 Critères Analysés | NOVA Business"
+      content="Création de Site Web Sur-Mesure Optimisé SEO | NOVA Business"
     />
     <meta
       name="twitter:description"
-      content="Recevez votre audit SEO gratuit en 1h avec NOVA Business. Plus de 100 critères analysés par nos experts pour booster votre référencement naturel."
+      content="NOVA Business crée votre site web sur-mesure, performant et optimisé SEO dès la première ligne. Sites vitrines, e-commerce, landing pages — conçus pour convertir et dominer Google."
     />
     <meta
       name="twitter:image"
@@ -67,7 +70,7 @@
     />
     <meta
       name="twitter:image:alt"
-      content="NOVA Business - Audit SEO Gratuit"
+      content="NOVA Business - Création de Site Web"
     />
 
     <!-- Canonical URL -->
@@ -118,7 +121,10 @@
       rel="preload"
       href="/assets/css/style.bundle.levrai.css"
       as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
     <noscript
       ><link rel="stylesheet" href="/assets/css/style.bundle.levrai.css"
@@ -136,7 +142,7 @@
         "image": "https://www.nova-business.fr/assets/img/Nova_business_logo.webp",
         "telephone": "+33783056260",
         "email": "contact@nova-business.fr",
-        "description": "Agence SEO spécialisée dans l'audit et l'optimisation du référencement naturel pour les PME",
+        "description": "Agence web spécialisée dans la création de sites sur-mesure, optimisés SEO, pour les PME et entrepreneurs",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "55 avenue Marceau",
@@ -162,8 +168,8 @@
         },
         "service": {
           "@type": "Service",
-          "name": "Audit SEO",
-          "description": "Audit SEO complet avec plus de 100 critères analysés",
+          "name": "Création de Site Web",
+          "description": "Création de sites web sur-mesure, optimisés SEO, pour vitrines, e-commerce et landing pages",
           "provider": { "@id": "https://www.nova-business.fr/#localbusiness" }
         }
       }
@@ -172,6 +178,170 @@
     <!-- Ajouter preconnect pour améliorer les performances -->
     <link rel="preconnect" href="https://fonts.cdnfonts.com" />
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Styles hero sombre -->
+    <style>
+      /* === Hero fond sombre === */
+      .hero-section {
+        background-color: var(--color-heading) !important;
+        position: relative;
+      }
+
+      /* Grain subtil en overlay */
+      .hero-section::before {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+        bottom: 0;
+        content: "";
+        left: 0;
+        pointer-events: none;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+
+      .hero-section .hero-title {
+        color: var(--color-white);
+      }
+
+      /* Mot-clé mis en avant en jaune */
+      .hero-highlight {
+        color: var(--color-yellow-deep);
+        position: relative;
+      }
+
+      .hero-section .hero-subtitle {
+        color: rgb(255 255 255 / 60%);
+        font-size: 1.35rem;
+        font-weight: 400;
+        max-width: 680px;
+        margin: 0 auto 2.5rem;
+      }
+
+      /* Badge pilule au-dessus du H1 */
+      .hero-badge {
+        align-items: center;
+        background-color: rgb(255 255 255 / 8%);
+        border: 1px solid rgb(255 255 255 / 15%);
+        border-radius: 999px;
+        color: var(--color-yellow);
+        display: inline-flex;
+        font-size: 0.85rem;
+        font-weight: 500;
+        gap: 0.45rem;
+        letter-spacing: 0.03em;
+        margin-bottom: 2rem;
+        padding: 0.35rem 1rem;
+      }
+
+      .hero-badge-dot {
+        background: var(--color-yellow-deep);
+        border-radius: 50%;
+        display: inline-block;
+        height: 7px;
+        width: 7px;
+      }
+
+      /* CTA groupe : toujours en colonne, lien sous le bouton */
+      .hero-cta-group {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 0 auto 2.5rem;
+      }
+
+      /* CTA principal : jaune sur sombre, taille généreuse */
+      .hero-section .hero-cta-primary {
+        background-color: var(--color-yellow-deep) !important;
+        border-color: var(--color-yellow-deep) !important;
+        color: var(--color-white) !important;
+        font-size: 1.05rem;
+        font-weight: 700;
+        padding: 1rem 2.75rem;
+        transition:
+          background-color 0.2s ease,
+          transform 0.15s ease;
+      }
+
+      .hero-section .hero-cta-primary:hover {
+        background-color: var(--color-yellow-hover) !important;
+        border-color: var(--color-yellow-hover) !important;
+        transform: translateY(-2px);
+      }
+
+      /* CTA secondaire : blanc semi-transparent */
+      .hero-cta-secondary {
+        color: rgb(255 255 255 / 55%);
+        font-size: 0.95rem;
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        transition: color 0.2s ease;
+      }
+
+      .hero-cta-secondary:hover {
+        color: var(--color-white);
+      }
+
+      /* Mini stats */
+      .hero-stats {
+        color: rgb(255 255 255 / 40%);
+        display: flex;
+        font-size: 0.68rem;
+        gap: 1.75rem;
+        justify-content: center;
+        letter-spacing: 0.02em;
+        margin-bottom: 3rem;
+        text-transform: uppercase;
+      }
+
+      .hero-stats strong {
+        color: rgb(255 255 255 / 80%);
+        display: block;
+        font-size: 1rem;
+        letter-spacing: 0;
+        text-transform: none;
+      }
+
+      .hero-stats-sep {
+        color: rgb(255 255 255 / 15%);
+      }
+
+      /* Logos clients : désaturés + inversés pour fond sombre */
+      .hero-section .client-logo {
+        filter: grayscale(1) invert(1);
+        opacity: 0.55;
+        transition:
+          opacity 0.25s ease,
+          filter 0.25s ease;
+      }
+
+      .hero-section .client-logo:hover {
+        opacity: 0.9;
+        filter: grayscale(1) invert(1) brightness(1.1);
+      }
+
+      /* Séparateur doux entre hero sombre et reste du site */
+      .hero-section .hero-container {
+        position: relative;
+        z-index: 1;
+      }
+
+      @media (width >= 640px) {
+        .hero-stats {
+          gap: 3rem;
+        }
+      }
+
+      @media (width <= 480px) {
+        .hero-stats {
+          gap: 1.25rem;
+        }
+
+        .hero-badge {
+          font-size: 0.78rem;
+        }
+      }
+    </style>
 
     <!--  Détection JavaScript simplifiée -->
     <script>
@@ -199,7 +369,7 @@
           >
             <img
               src="assets/img/Nova_business_logo.webp"
-              alt="NOVA Business - Audit SEO"
+              alt="NOVA Business - Agence Web"
               class="logo-image"
             />
           </a>
@@ -220,18 +390,6 @@
                 <ul class="dropdown-menu" role="menu">
                   <li>
                     <a
-                      href="audit-seo.html"
-                      class="dropdown-link"
-                      role="menuitem"
-                    >
-                      Audit SEO
-                      <span class="dropdown-description"
-                        >Votre site analysé par un expert SEO</span
-                      >
-                    </a>
-                  </li>
-                  <li>
-                    <a
                       href="website.html"
                       class="dropdown-link"
                       role="menuitem"
@@ -240,6 +398,18 @@
                       <span class="dropdown-description"
                         >Générez plus de prospects et de ventes grâce à votre
                         site optimisé en SEO</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="audit-seo.html"
+                      class="dropdown-link"
+                      role="menuitem"
+                    >
+                      Audit SEO
+                      <span class="dropdown-description"
+                        >Votre site analysé par un expert SEO</span
                       >
                     </a>
                   </li>
@@ -348,18 +518,6 @@
             <ul class="mobile-dropdown-menu" role="menu">
               <li>
                 <a
-                  href="audit-seo.html"
-                  class="mobile-dropdown-link"
-                  role="menuitem"
-                >
-                  Audit SEO
-                  <span class="mobile-dropdown-description"
-                    >Votre site analysé par un expert SEO</span
-                  >
-                </a>
-              </li>
-              <li>
-                <a
                   href="website.html"
                   class="mobile-dropdown-link"
                   role="menuitem"
@@ -368,6 +526,18 @@
                   <span class="mobile-dropdown-description"
                     >Générez plus de prospects et de ventes grâce à votre site
                     optimisé en SEO</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="audit-seo.html"
+                  class="mobile-dropdown-link"
+                  role="menuitem"
+                >
+                  Audit SEO
+                  <span class="mobile-dropdown-description"
+                    >Votre site analysé par un expert SEO</span
                   >
                 </a>
               </li>
@@ -417,87 +587,46 @@
       <!-- Section Hero -->
       <section class="hero-section" aria-labelledby="hero-title">
         <div class="hero-container">
+          <span class="hero-badge" aria-hidden="true">
+            <span class="hero-badge-dot"></span>
+            Agence web &amp; SEO · Paris
+          </span>
+
           <h1 id="hero-title" class="hero-title">
-            Améliorer la visibilité de&nbsp;votre&nbsp;site&nbsp;web
+            Votre site web, conçu pour
+            <span class="hero-highlight">convertir</span>
+            et&nbsp;dominer&nbsp;Google
           </h1>
 
           <h2 class="hero-subtitle">
-            + 100 critères SEO analysés par&nbsp;un&nbsp;expert
+            Sites sur-mesure, performants et optimisés SEO
+            dès&nbsp;la&nbsp;première&nbsp;ligne
           </h2>
 
-          <div class="so-container">
-            <div id="so-boxso1752003017">
-              <form
-                class="so-widget-form"
-                id="so1752003017"
-                action="https://www.websiteauditserver.com/process-embedded.inc"
-                target="so-iframe"
-                data-behaviour="be_in_touch"
-                data-title="Rapport du Site pour "
-                data-touch="Merci ! Nous avons bien reçu votre demande. Vous recevrez d&#039;ici une heure votre audit SEO gratuit par email."
-                onsubmit="return soSubmit(this)"
-              >
-                <input
-                  id="so-typeso1752003017"
-                  type="hidden"
-                  name="type"
-                  value="pdf"
-                />
-                <input type="hidden" name="uid" value="79937" />
-                <input
-                  type="hidden"
-                  name="csrf_token"
-                  value="c60fe6286b1427c1dff873623c1aaea4edff19db"
-                />
-                <input type="hidden" name="behaviour" value="be_in_touch" />
-                <input type="hidden" name="template" value="0" />
-
-                <div id="so-fieldswrapso1752003017">
-                  <div class="so-field-wrapper" id="domain-wrapper">
-                    <input
-                      type="text"
-                      name="domain"
-                      id="so-domainso1752003017"
-                      class="so-fieldso1752003017"
-                      placeholder="exemple.com"
-                      data-validation="Entrez une URL de site web correcte."
-                    />
-                    <button
-                      type="button"
-                      id="so-submitso1752003017"
-                      class="so-inline-button"
-                      onclick="goToStep2()"
-                    >
-                      Audit gratuit
-                    </button>
-                  </div>
-                  <div class="so-field-wrapper hidden" id="email-wrapper">
-                    <input
-                      type="text"
-                      name="email"
-                      id="so-emailso1752003017"
-                      class="so-fieldso1752003017"
-                      placeholder="email@exemple.com"
-                      data-validation="Veuillez indiquer une adresse e-mail valide."
-                    />
-                    <button
-                      type="submit"
-                      id="so-submitso1752003017-final"
-                      class="so-inline-button"
-                    >
-                      Recevoir mon audit
-                    </button>
-                  </div>
-                </div>
-              </form>
-            </div>
+          <div class="hero-cta-group">
+            <a href="website.html" class="btn-dark hero-cta-primary">
+              Découvrir nos offres web
+            </a>
+            <a href="audit-seo.html" class="hero-cta-secondary">
+              Vous avez déjà un site&nbsp;? Auditez-le gratuitement →
+            </a>
           </div>
-          <div>
-            <p class="hero-description">
-              Obtenez un <strong>audit SEO gratuit</strong> de votre site web en
-              <strong>moins d'une heure</strong>. Entrez l'URL de votre site et
-              votre adresse e-mail ci-dessus.
-            </p>
+
+          <div class="hero-stats" aria-label="Chiffres clés NOVA Business">
+            <div>
+              <strong>+50</strong>
+              Sites livrés
+            </div>
+            <span class="hero-stats-sep" aria-hidden="true">|</span>
+            <div>
+              <strong>4.9&nbsp;/ 5</strong>
+              Note clients
+            </div>
+            <span class="hero-stats-sep" aria-hidden="true">|</span>
+            <div>
+              <strong>2 sem.</strong>
+              Livraison moyenne
+            </div>
           </div>
 
           <!-- Logos clients seulement dans le hero -->
@@ -546,7 +675,7 @@
         <div class="seo-hero-container">
           <img
             src="assets/img/index_en.webp"
-            alt="Service audit SEO NOVA Business"
+            alt="Création de site web sur-mesure NOVA Business"
             class="seo-hero-image"
           />
         </div>
@@ -554,29 +683,28 @@
         <!-- Conteneur 2 - Présentation du service -->
         <div class="section-two-cols" data-animate="fade-up">
           <div class="text-block" data-animate="fade-left" data-delay="100">
-            <h3>Audits SEO professionnels</h3>
+            <h3>Création de sites web sur-mesure</h3>
             <p>
-              Pour bien positionner un site dans les résultats de recherche en
-              2025, Google évalue plus de 100 critères.
+              Un site web performant est aujourd'hui votre meilleur commercial.
+              Il travaille 24h/24 pour asseoir votre crédibilité, attirer des
+              prospects et générer des opportunités.
             </p>
             <p>
-              Chez NOVA Business, basé à Paris, nous réalisons des audits SEO
-              complets pour vous aider à comprendre pourquoi votre site est
-              moins visible que vos concurrents.
+              Chez NOVA Business, basé à Paris, nous ne créons pas de simples
+              sites&nbsp;: nous construisons des outils digitaux sur-mesure.
+              Chaque projet est développé avec un code propre, une performance
+              optimale et un SEO intégré dès la première ligne.
             </p>
             <p>
-              Grâce à ces audits, vous pouvez analyser l'ensemble des facteurs
-              clés&nbsp;: performance du site, qualité du contenu, sécurité,
-              compatibilité mobile, structure des balises, vitesse de
-              chargement… tout est passé en revue.
+              Site vitrine élégant, boutique e-commerce qui convertit, refonte
+              complète ou landing page percutante &mdash; nous adaptons chaque
+              réalisation à vos objectifs et à votre secteur.
             </p>
             <p>
-              En moins d'une heure, vous recevez un rapport clair, priorisé,
-              avec des recommandations directement actionnables. Vous savez
-              exactement quoi corriger, dans quel ordre, et avec quel impact sur
-              votre visibilité.
+              Le résultat&nbsp;: un site rapide, accessible, bien référencé et
+              pensé pour transformer vos visiteurs en clients.
             </p>
-            <a href="audit-seo.html" class="btn-dark">En savoir plus</a>
+            <a href="website.html" class="btn-dark">Découvrir nos offres</a>
           </div>
           <div class="img-block" data-animate="fade-right" data-delay="100">
             <div class="screen-container">
@@ -596,22 +724,22 @@
           data-animate="fade-up"
         >
           <div class="text-block" data-animate="fade-right" data-delay="100">
-            <h3>Un accompagnement SEO sur mesure dans la durée</h3>
+            <h3>Audit SEO&nbsp;: diagnostiquez votre visibilité</h3>
             <p>
-              Augmenter son chiffre d'affaires et améliorer sa visibilité ne se
-              résume pas à un audit ponctuel. Le référencement est un levier de
-              croissance continue qui demande rigueur et cohérence sur le long
-              terme.
+              Votre site existe déjà mais il n'attire pas assez de
+              visiteurs&nbsp;? Un audit SEO est la première étape pour
+              identifier ce qui freine votre référencement et prioriser les
+              actions à fort impact.
             </p>
             <p>
-              Chez NOVA Business, nous vous proposons un accompagnement complet
-              &nbsp;: optimisation technique, amélioration de vos contenus,
-              rédaction d'articles de blog ciblés, et gestion de vos réseaux
-              sociaux professionnels pour faire du référencement un vrai moteur
-              de votre activité.
+              Chez NOVA Business, nous analysons plus de 100 critères&nbsp;:
+              performance technique, qualité du contenu, structure des balises,
+              compatibilité mobile, vitesse de chargement &mdash; tout est passé
+              en revue pour vous fournir un rapport clair et actionnable en
+              moins d'une heure.
             </p>
-            <a href="#" class="btn-dark" id="pdf-audit-trigger"
-              >Voir un audit</a
+            <a href="audit-seo.html" class="btn-dark"
+              >Obtenir mon audit gratuit</a
             >
           </div>
           <div class="img-block" data-animate="fade-left" data-delay="100">
@@ -631,41 +759,41 @@
       <section id="value" class="section" aria-labelledby="value-heading">
         <div class="value-container">
           <h2 id="value-heading" class="value-title">
-            Parfait pour les dirigeants de PME, freelances et agences
-            numériques,
+            Idéal pour les dirigeants de PME, freelances, startups et commerces
+            locaux,
           </h2>
 
           <p class="value-subtitle">
-            les entrepreneurs, responsables marketing et agences ou toute
-            personne ayant besoin d'améliorer sa visibilité en ligne !
+            qui veulent un site professionnel, rapide et visible &mdash; sans
+            complexité ni dépendance à un CMS générique.
           </p>
 
           <ul class="value-list">
             <li class="value-item">
               <i class="fa-solid fa-check value-icon" aria-hidden="true"></i>
               <div class="value-content">
-                <strong>Gagnez du temps</strong>
-                – Nos audits sont réalisés selon une méthode claire et
-                structurée, pour vous fournir un diagnostic rapide et fiable de
-                votre site.
+                <strong>Un site qui vous ressemble</strong>
+                &ndash; Chaque site est conçu sur-mesure, sans template, pour
+                refléter votre identité et répondre précisément à vos objectifs
+                business.
               </div>
             </li>
             <li class="value-item">
               <i class="fa-solid fa-check value-icon" aria-hidden="true"></i>
               <div class="value-content">
-                <strong>Présentez des rapports professionnels</strong>
-                – Recevez un livrable structuré, compréhensible, prêt à être
-                présenté et utilisé par vos équipes.
+                <strong>Performant dès le premier jour</strong>
+                &ndash; Code propre, temps de chargement optimisé, Core Web
+                Vitals au vert&nbsp;: votre site est conçu pour les moteurs de
+                recherche et vos utilisateurs.
               </div>
             </li>
             <li class="value-item">
               <i class="fa-solid fa-check value-icon" aria-hidden="true"></i>
               <div class="value-content">
                 <strong>Générez plus de clients</strong>
-                – Transformez votre site en aimant à prospects. Utilisez nos
-                offres d'accompagnement SEO pour acquérir plus de clients
-                directement et augmenter votre chiffre d'affaires depuis votre
-                site web.
+                &ndash; Un site bien référencé et bien conçu est votre meilleur
+                commercial. Il attire, convainc et convertit vos visiteurs en
+                prospects qualifiés, 24h/24.
               </div>
             </li>
           </ul>
@@ -923,45 +1051,41 @@
 
           <div class="why-nova-content">
             <p>
-              Obtenir le classement de votre site web dans Google est plus
-              difficile et plus compétitif que jamais. Il existe de nombreux
-              facteurs tels que le contenu de la page, la performance, les
-              facteurs sociaux et le profil de vos backlinks (liens retour) que
-              les moteurs de recherche utilisent pour déterminer quels sites
-              doivent être classés au plus haut niveau.
+              Avoir un site web ne suffit plus. Pour se démarquer, il faut un
+              site rapide, bien référencé et conçu pour convertir. C'est
+              exactement ce que fait NOVA Business depuis Paris.
             </p>
 
             <p>
-              NOVA Business est une agence d'audit SEO qui effectue une analyse
-              détaillée du référencement sur plus de 100 points de données du
-              site web, et fournit des recommandations claires et actionnables
-              pour améliorer votre présence en ligne et obtenir un meilleur
-              classement dans les résultats de recherche.
+              Nous sommes une agence web spécialisée dans la création de sites
+              sur-mesure pour les PME, freelances et entrepreneurs. Chaque site
+              est développé à la main, sans template générique, avec une
+              obsession pour la performance, l'expérience utilisateur et le
+              référencement naturel.
             </p>
 
             <p>
-              Nous mettons également à disposition de nos clients des offres
-              leur permettant de faire évoluer progressivement leur
-              référencement SEO, ainsi que l'implémentation de nos
-              recommandations SEO.
+              Notre approche&nbsp;: comprendre votre activité, vos cibles et vos
+              objectifs, puis concevoir un outil digital qui travaille pour vous
+              &mdash; 24h/24, sans effort supplémentaire de votre part.
             </p>
 
             <p>
-              NOVA Business se distingue par sa rapidité d'analyse, l'étude de
-              tous types de sites web, sa prise en compte du JavaScript, et
-              l'étendue des critères SEO analysés.
+              Nous proposons des sites vitrines, e-commerce, one-page et landing
+              pages, ainsi que des refontes complètes pour les sites existants.
+              Chaque réalisation intègre notre expertise SEO dès la première
+              ligne de code.
             </p>
 
             <p>
-              Nous proposons aussi la refonte partielle ou complète de votre
-              site web pour vous aider à obtenir un site rapide, performant et
-              avec un référencement SEO optimal afin de franchir toutes vos
-              limites actuelles.
+              Nous accompagnons aussi nos clients avec des audits SEO pour
+              diagnostiquer les sites existants, des articles de blog et une
+              gestion de réseaux sociaux, pour une stratégie digitale complète.
             </p>
 
             <p>
               Enfin, notre blog regorge d'articles, d'astuces et de conseils
-              pratiques pour vous permettre de rester à la pointe du SEO.
+              pratiques pour rester à la pointe du digital et du SEO.
             </p>
           </div>
         </div>
@@ -971,16 +1095,15 @@
         <div class="container cta-banner-container">
           <div class="cta-banner-content" data-animate="zoom-in">
             <h2 class="h2 cta-banner-title" id="cta-banner-heading">
-              Qu'attendez-vous&nbsp;?<br />
-              Recevez gratuitement votre audit SEO
+              Votre projet web mérite mieux<br />
+              qu'un template générique.
             </h2>
             <a
-              href="#hero-title"
+              href="website.html"
               class="cta-banner-btn"
-              aria-label="Recevez votre audit SEO gratuitement"
-              onclick="focusWidgetForm(event)"
+              aria-label="Découvrir nos offres de création de site web"
             >
-              Commander maintenant
+              Découvrir nos offres web
             </a>
           </div>
         </div>
@@ -1061,12 +1184,12 @@
           <h3 class="footer-title">Navigation</h3>
           <ul class="footer-links">
             <li><a href="index.html" class="footer-link">Accueil</a></li>
-            <li><a href="audit-seo.html" class="footer-link">Audit SEO</a></li>
             <li>
               <a href="website.html" class="footer-link"
                 >Création de Site Web</a
               >
             </li>
+            <li><a href="audit-seo.html" class="footer-link">Audit SEO</a></li>
             <li>
               <a href="articles.html" class="footer-link"
                 >Articles de Blog SEO</a

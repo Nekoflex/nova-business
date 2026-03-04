@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿<!doctype html>
 <html lang="fr" class="no-js">
   <head>
     <!-- Google tag (gtag.js) -->
@@ -18,10 +18,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Tarifs Audit SEO transparents dès 299€ | NOVA Business</title>
+    <title>Tarifs Création de Site Web &amp; Audit SEO | NOVA Business</title>
     <meta
       name="description"
-      content="Tarifs d'audit SEO claires pour TPE/PME : Audit Initial 299€, Audit Stratégique 349€, Intégration dès 399€. Devis gratuit et paiement sécurisé."
+      content="Tarifs transparents NOVA Business pour la création de site web sur-mesure et l'audit SEO. Offres adaptées aux TPE/PME — devis gratuit et paiement sécurisé."
     />
 
     <!-- SEO Meta Tags (conservés) -->
@@ -33,11 +33,11 @@
     <meta property="og:type" content="website" />
     <meta
       property="og:title"
-      content="Tarifs Audit SEO transparents dès 299€ | NOVA Business"
+      content="Tarifs Création de Site Web &amp; Audit SEO | NOVA Business"
     />
     <meta
       property="og:description"
-      content="Tarifs d'audit SEO claires pour TPE/PME : Audit Initial 299€, Audit Stratégique 349€, Intégration dès 399€. Devis gratuit et paiement sécurisé."
+      content="Tarifs transparents pour la création de site web sur-mesure et l'audit SEO. Offres adaptées aux TPE/PME — devis gratuit."
     />
     <meta property="og:url" content="https://nova-business.fr/tarification" />
     <meta property="og:site_name" content="NOVA Business" />
@@ -46,17 +46,20 @@
       property="og:image"
       content="https://nova-business.fr/assets/img/og-tarification.jpg"
     />
-    <meta property="og:image:alt" content="Tarifs d'audit SEO NOVA Business" />
+    <meta
+      property="og:image:alt"
+      content="Tarifs création de site web &amp; audit SEO NOVA Business"
+    />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
-      content="Tarifs Audit SEO transparents dès 299€ | NOVA Business"
+      content="Tarifs Création de Site Web &amp; Audit SEO | NOVA Business"
     />
     <meta
       name="twitter:description"
-      content="Tarifs d'audit SEO claires pour TPE/PME : Audit Initial 299€, Audit Stratégique 349€, Intégration dès 399€. Devis gratuit et paiement sécurisé."
+      content="Tarifs transparents pour la création de site web sur-mesure et l'audit SEO. Offres adaptées TPE/PME — devis gratuit."
     />
     <meta
       name="twitter:image"
@@ -85,7 +88,10 @@
       rel="preload"
       href="/assets/css/style.bundle.levrai.css"
       as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
+      onload="
+        this.onload = null;
+        this.rel = 'stylesheet';
+      "
     />
     <noscript
       ><link rel="stylesheet" href="/assets/css/style.bundle.levrai.css"
@@ -178,8 +184,21 @@
       {
         "@context": "https://schema.org",
         "@type": "ItemList",
-        "name": "Offres d'audit SEO",
+        "name": "Offres création de site web et audit SEO",
         "itemListElement": [
+          {
+            "@type": "Service",
+            "name": "Création de site vitrine sur-mesure",
+            "description": "Site vitrine professionnel, responsive, optimisé SEO, livré en 2 semaines.",
+            "provider": { "@id": "https://nova-business.fr/#organization" },
+            "areaServed": "FR",
+            "offers": {
+              "@type": "Offer",
+              "priceCurrency": "EUR",
+              "availability": "https://schema.org/InStock",
+              "url": "https://nova-business.fr/website"
+            }
+          },
           {
             "@type": "Service",
             "name": "Audit SEO - Initial",
@@ -259,13 +278,13 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
       media="print"
-      onload="this.media='all'"
+      onload="this.media = 'all'"
     />
   </head>
 
@@ -282,7 +301,7 @@
           >
             <img
               src="assets/img/Nova_business_logo.webp"
-              alt="NOVA Business - Audit SEO"
+              alt="NOVA Business - Agence Web &amp; SEO"
               class="logo-image"
             />
           </a>
@@ -303,18 +322,6 @@
                 <ul class="dropdown-menu" role="menu">
                   <li>
                     <a
-                      href="audit-seo.html"
-                      class="dropdown-link"
-                      role="menuitem"
-                    >
-                      Audit SEO
-                      <span class="dropdown-description"
-                        >Votre site analysé par un expert SEO</span
-                      >
-                    </a>
-                  </li>
-                  <li>
-                    <a
                       href="website.html"
                       class="dropdown-link"
                       role="menuitem"
@@ -323,6 +330,18 @@
                       <span class="dropdown-description"
                         >Générez plus de prospects et de ventes grâce à votre
                         site optimisé en SEO</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="audit-seo.html"
+                      class="dropdown-link"
+                      role="menuitem"
+                    >
+                      Audit SEO
+                      <span class="dropdown-description"
+                        >Votre site analysé par un expert SEO</span
                       >
                     </a>
                   </li>
@@ -433,18 +452,6 @@
             <ul class="mobile-dropdown-menu" role="menu">
               <li>
                 <a
-                  href="audit-seo.html"
-                  class="mobile-dropdown-link"
-                  role="menuitem"
-                >
-                  Audit SEO
-                  <span class="mobile-dropdown-description"
-                    >Votre site analysé par un expert SEO</span
-                  >
-                </a>
-              </li>
-              <li>
-                <a
                   href="website.html"
                   class="mobile-dropdown-link"
                   role="menuitem"
@@ -453,6 +460,18 @@
                   <span class="mobile-dropdown-description"
                     >Générez plus de prospects et de ventes grâce à votre site
                     optimisé en SEO</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="audit-seo.html"
+                  class="mobile-dropdown-link"
+                  role="menuitem"
+                >
+                  Audit SEO
+                  <span class="mobile-dropdown-description"
+                    >Votre site analysé par un expert SEO</span
                   >
                 </a>
               </li>
@@ -511,359 +530,14 @@
             <!-- Message de valeur -->
             <div class="pricing-promotion" role="note" aria-live="polite">
               <p class="promotion-text">
-                Gagnez en visibilité, corrigez les freins SEO qui bloquent votre
-                croissance et attirez plus de clients.
+                Créez votre site web sur-mesure ou boostez votre visibilité
+                SEO&nbsp;: des offres transparentes, conçues pour les TPE et
+                PME.
               </p>
             </div>
           </div>
           <div class="pricing-hero-image"></div>
         </main>
-      </section>
-
-      <!-- Section Cards de Tarification -->
-      <section id="seo-pricing" class="pricing-main">
-        <div>
-          <div class="seo-pricing-titles">
-            <h2>Choisissez votre offre d'audit&nbsp;SEO</h2>
-            <h3 class="text-center">
-              Rapports d’audit SEO pour devenir les premiers sur Google. Attirez
-              du trafic qualifié et développez&nbsp;votre&nbsp;entreprise.
-            </h3>
-          </div>
-          <div
-            class="pricing-grid"
-            id="pricing-seo-offers"
-            role="list"
-            aria-label="Liste des offres d'audit SEO"
-          >
-            <!-- Carte 1 - Audit Initial -->
-            <article class="pricing-card" aria-labelledby="title-audit-initial">
-              <h3 id="title-audit-initial" class="card-title h3 title-center">
-                Audit<br />Initial
-              </h3>
-
-              <div
-                class="card-pricing"
-                aria-labelledby="title-audit-initial"
-                aria-describedby="trust-note-1"
-              >
-                <div class="price-container">
-                  <span class="price">299&nbsp;€</span>
-                  <span class="price-period">TTC</span>
-                </div>
-              </div>
-
-              <p class="card-tagline">Diagnostic complet de votre site</p>
-
-              <div class="card-features">
-                <ul class="features-list">
-                  <li>
-                    Référencement — qualité et pertinence des textes et
-                    mots-clés
-                  </li>
-                  <li>
-                    Performance — vitesse de chargement, optimisation des
-                    images, erreurs de code
-                  </li>
-                  <li>UX — affichage & navigation mobile, tablette et PC</li>
-                  <li>
-                    Liens vers votre site — popularité et sites qui vous
-                    mentionnent
-                  </li>
-                  <li>Rapport PDF clair livré en moins d'&nbsp;1&nbsp;heure</li>
-                  <li>
-                    Rendez-vous de 15&nbsp;min pour discuter des résultats
-                  </li>
-                </ul>
-              </div>
-
-              <p class="card-target">
-                <strong>Pour qui&nbsp;?</strong> TPE/PME, indés & professions
-                libérales qui veulent des actions rapides.
-              </p>
-
-              <footer class="card-footer">
-                <div class="stripe-button-wrapper">
-                  <stripe-buy-button
-                    buy-button-id="buy_btn_1Rha6NKnHhVCnenqo9q66dPJ"
-                    publishable-key="pk_live_51RdRz5KnHhVCnenqbjfF98V5e5ymIXDxsA8ETS1ZxCbezpaKsSpR12OCYbQjZhIj0TnUPhkinJUBaRzjxzgi04Hf00cFqcnJTo"
-                    aria-describedby="trust-note-1"
-                  >
-                  </stripe-buy-button>
-                  <p id="trust-note-1" class="trust-note">
-                    Paiement sécurisé par Stripe
-                  </p>
-                </div>
-              </footer>
-            </article>
-
-            <!-- Carte 2 - Audit Stratégique (Recommandée) -->
-            <article
-              class="pricing-card is-recommended"
-              aria-labelledby="title-audit-strategique"
-              data-recommended="true"
-            >
-              <h3
-                id="title-audit-strategique"
-                class="card-title h3 title-center"
-              >
-                Audit<br />Stratégique
-              </h3>
-
-              <div
-                class="card-pricing"
-                aria-labelledby="title-audit-strategique"
-                aria-describedby="trust-note-2"
-              >
-                <div class="price-container">
-                  <span class="price">349&nbsp;€</span>
-                  <span class="price-period">TTC</span>
-                </div>
-              </div>
-
-              <p class="card-tagline">
-                Diagnostic + plan d'action 30&nbsp;jours
-              </p>
-
-              <div class="card-features">
-                <ul class="features-list">
-                  <li>Tout ce qui est inclus dans l'Audit Initial</li>
-                  <li>
-                    Feuille de route priorisée sur 30&nbsp;jours pour améliorer
-                    votre SEO
-                  </li>
-                  <li>Calendrier d'actions et indicateurs à suivre</li>
-                  <li>
-                    Priorisation claire&nbsp;: quoi faire, dans quel ordre,
-                    pourquoi
-                  </li>
-                  <li>
-                    Rapport d'audit en PDF clair et du plan d'action livrés
-                    en&nbsp;3&nbsp;heures
-                  </li>
-                  <li>RDV stratégique de 15&nbsp;min avec un expert en SEO</li>
-                </ul>
-              </div>
-
-              <p class="card-target">
-                <strong>Pour qui&nbsp;?</strong> Dirigeants & équipes qui
-                veulent un plan prêt à exécuter.
-              </p>
-
-              <footer class="card-footer">
-                <div class="stripe-button-wrapper">
-                  <stripe-buy-button
-                    buy-button-id="buy_btn_1RhaCxKnHhVCnenqC00wXffy"
-                    publishable-key="pk_live_51RdRz5KnHhVCnenqbjfF98V5e5ymIXDxsA8ETS1ZxCbezpaKsSpR12OCYbQjZhIj0TnUPhkinJUBaRzjxzgi04Hf00cFqcnJTo"
-                    aria-describedby="trust-note-2"
-                  >
-                  </stripe-buy-button>
-                  <p id="trust-note-2" class="trust-note">
-                    Paiement sécurisé par Stripe
-                  </p>
-                </div>
-              </footer>
-            </article>
-
-            <!-- Carte 3 - Audit Intégration -->
-            <article
-              class="pricing-card"
-              aria-labelledby="title-audit-integration"
-            >
-              <h3
-                id="title-audit-integration"
-                class="card-title h3 title-center"
-              >
-                Audit<br />Intégration
-              </h3>
-
-              <div
-                class="card-pricing"
-                aria-labelledby="title-audit-integration"
-              >
-                <div class="price-container">
-                  <span class="price-prefix">à partir de</span>
-                  <span class="price">399&nbsp;€</span>
-                  <span class="price-period">TTC</span>
-                </div>
-              </div>
-
-              <p class="card-tagline">
-                Diagnostic + Intégration des recommandations
-              </p>
-
-              <div class="card-features">
-                <ul class="features-list">
-                  <li>Mise en œuvre des actions prioritaires</li>
-                  <li>
-                    Amélioration des performances & Core Web Vitals (vitesse du
-                    site)
-                  </li>
-                  <li>
-                    Optimisation titres, balises, contenus images et textes
-                  </li>
-                  <li>
-                    Amélioration de l'ergonomie sur mobile, tablette et PC
-                  </li>
-                  <li>
-                    Renforcement de la popularité (backlinks - liens vers votre
-                    site)
-                  </li>
-                  <li>Suivi 30&nbsp;jours + rapport d'avancement</li>
-                </ul>
-              </div>
-              <p class="card-target">
-                <strong>Pour qui&nbsp;?</strong> Entreprises qui veulent passer
-                à l'action rapidement, accompagnées par des experts en SEO.
-              </p>
-
-              <footer class="card-footer">
-                <div class="button-wrapper">
-                  <a
-                    href="contact.html"
-                    class="btn-dark"
-                    aria-label="Demander un devis pour l'Audit Intégration"
-                  >
-                    Demander un devis
-                  </a>
-                  <p class="trust-note">Devis sur-mesure selon vos besoins.</p>
-                </div>
-              </footer>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section Aperçu de l'Audit SEO -->
-      <section id="audit-overview" aria-labelledby="audit-overview-title">
-        <div class="audit-overview-container">
-          <h2 class="h2 audit-overview-title" id="audit-overview-title">
-            Nous auditons de manière exhaustive n'importe quel site web avec
-            plus de <span>100+</span>
-            vérifications.
-          </h2>
-          <div class="audit-categories-grid">
-            <!-- Catégorie 1 - Référencement -->
-            <div class="audit-category-item">
-              <div class="audit-category-icon">
-                <img
-                  src="assets/img/wl-seo.webp"
-                  alt="Référencement SEO"
-                  loading="lazy"
-                  width="80"
-                  height="80"
-                />
-              </div>
-              <h3 class="h3 audit-category-title">Référencement</h3>
-              <p class="audit-category-description">
-                Analyse des balises meta, structure des URLs, optimisation du
-                contenu et respect des bonnes pratiques SEO.
-              </p>
-            </div>
-
-            <!-- Catégorie 2 - Classements -->
-            <div class="audit-category-item">
-              <div class="audit-category-icon">
-                <img
-                  src="assets/img/wl-rankings.webp"
-                  alt="Classements et positions"
-                  loading="lazy"
-                  width="80"
-                  height="80"
-                />
-              </div>
-              <h3 class="h3 audit-category-title">Classements</h3>
-              <p class="audit-category-description">
-                Suivi des positions sur les mots-clés stratégiques et
-                identification des opportunités d'amélioration.
-              </p>
-            </div>
-
-            <!-- Catégorie 3 - Liens -->
-            <div class="audit-category-item">
-              <div class="audit-category-icon">
-                <img
-                  src="assets/img/wl-links.webp"
-                  alt="Analyse des liens"
-                  loading="lazy"
-                  width="80"
-                  height="80"
-                />
-              </div>
-              <h3 class="h3 audit-category-title">Liens</h3>
-              <p class="audit-category-description">
-                Évaluation des liens internes et externes, détection des liens
-                brisés et stratégie de maillage.
-              </p>
-            </div>
-
-            <!-- Catégorie 4 - Convivialité -->
-            <div class="audit-category-item">
-              <div class="audit-category-icon">
-                <img
-                  src="assets/img/wl-usability.webp"
-                  alt="Convivialité et expérience utilisateur"
-                  loading="lazy"
-                  width="80"
-                  height="80"
-                />
-              </div>
-              <h3 class="h3 audit-category-title">Convivialité</h3>
-              <p class="audit-category-description">
-                Analyse de l'expérience utilisateur, navigation, accessibilité
-                et compatibilité mobile.
-              </p>
-            </div>
-
-            <!-- Catégorie 5 - Performance -->
-            <div class="audit-category-item">
-              <div class="audit-category-icon">
-                <img
-                  src="assets/img/wl-performance.webp"
-                  alt="Performance et vitesse"
-                  loading="lazy"
-                  width="80"
-                  height="80"
-                />
-              </div>
-              <h3 class="h3 audit-category-title">Performance</h3>
-              <p class="audit-category-description">
-                Mesure de la vitesse de chargement, optimisation des images et
-                des Core Web Vitals.
-              </p>
-            </div>
-
-            <!-- Catégorie 6 - Réseaux Sociaux -->
-            <div class="audit-category-item">
-              <div class="audit-category-icon">
-                <img
-                  src="assets/img/wl-social.webp"
-                  alt="Réseaux sociaux et partage"
-                  loading="lazy"
-                  width="80"
-                  height="80"
-                />
-              </div>
-              <h3 class="h3 audit-category-title">Réseaux Sociaux</h3>
-              <p class="audit-category-description">
-                Vérification des intégrations sociales, balises Open Graph et
-                optimisation du partage.
-              </p>
-            </div>
-          </div>
-          <container>
-            <!-- Maillage interne -->
-            <nav class="pricing-links" aria-label="Liens utiles">
-              <a href="#faq-section-tarif" class="contact-btn">FAQ</a>
-              <a href="#" class="contact-btn" id="pdf-audit-trigger"
-                >Voir un audit</a
-              >
-              <a href="contact.html#calendly-widget" class="contact-btn"
-                >Parler à un expert</a
-              >
-            </nav>
-          </container>
-        </div>
       </section>
 
       <section class="pricing-website">
@@ -1457,7 +1131,352 @@
           </nav>
         </div>
       </section>
-      
+      <!-- Section Cards de Tarification -->
+      <section id="seo-pricing" class="pricing-main">
+        <div>
+          <div class="seo-pricing-titles">
+            <h2>Choisissez votre offre d'audit&nbsp;SEO</h2>
+            <h3 class="text-center">
+              Rapports d’audit SEO pour devenir les premiers sur Google. Attirez
+              du trafic qualifié et développez&nbsp;votre&nbsp;entreprise.
+            </h3>
+          </div>
+          <div
+            class="pricing-grid"
+            id="pricing-seo-offers"
+            role="list"
+            aria-label="Liste des offres d'audit SEO"
+          >
+            <!-- Carte 1 - Audit Initial -->
+            <article class="pricing-card" aria-labelledby="title-audit-initial">
+              <h3 id="title-audit-initial" class="card-title h3 title-center">
+                Audit<br />Initial
+              </h3>
+
+              <div
+                class="card-pricing"
+                aria-labelledby="title-audit-initial"
+                aria-describedby="trust-note-1"
+              >
+                <div class="price-container">
+                  <span class="price">299&nbsp;€</span>
+                  <span class="price-period">TTC</span>
+                </div>
+              </div>
+
+              <p class="card-tagline">Diagnostic complet de votre site</p>
+
+              <div class="card-features">
+                <ul class="features-list">
+                  <li>
+                    Référencement — qualité et pertinence des textes et
+                    mots-clés
+                  </li>
+                  <li>
+                    Performance — vitesse de chargement, optimisation des
+                    images, erreurs de code
+                  </li>
+                  <li>UX — affichage & navigation mobile, tablette et PC</li>
+                  <li>
+                    Liens vers votre site — popularité et sites qui vous
+                    mentionnent
+                  </li>
+                  <li>Rapport PDF clair livré en moins d'&nbsp;1&nbsp;heure</li>
+                  <li>
+                    Rendez-vous de 15&nbsp;min pour discuter des résultats
+                  </li>
+                </ul>
+              </div>
+
+              <p class="card-target">
+                <strong>Pour qui&nbsp;?</strong> TPE/PME, indés & professions
+                libérales qui veulent des actions rapides.
+              </p>
+
+              <footer class="card-footer">
+                <div class="stripe-button-wrapper">
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1Rha6NKnHhVCnenqo9q66dPJ"
+                    publishable-key="pk_live_51RdRz5KnHhVCnenqbjfF98V5e5ymIXDxsA8ETS1ZxCbezpaKsSpR12OCYbQjZhIj0TnUPhkinJUBaRzjxzgi04Hf00cFqcnJTo"
+                    aria-describedby="trust-note-1"
+                  >
+                  </stripe-buy-button>
+                  <p id="trust-note-1" class="trust-note">
+                    Paiement sécurisé par Stripe
+                  </p>
+                </div>
+              </footer>
+            </article>
+
+            <!-- Carte 2 - Audit Stratégique (Recommandée) -->
+            <article
+              class="pricing-card is-recommended"
+              aria-labelledby="title-audit-strategique"
+              data-recommended="true"
+            >
+              <h3
+                id="title-audit-strategique"
+                class="card-title h3 title-center"
+              >
+                Audit<br />Stratégique
+              </h3>
+
+              <div
+                class="card-pricing"
+                aria-labelledby="title-audit-strategique"
+                aria-describedby="trust-note-2"
+              >
+                <div class="price-container">
+                  <span class="price">349&nbsp;€</span>
+                  <span class="price-period">TTC</span>
+                </div>
+              </div>
+
+              <p class="card-tagline">
+                Diagnostic + plan d'action 30&nbsp;jours
+              </p>
+
+              <div class="card-features">
+                <ul class="features-list">
+                  <li>Tout ce qui est inclus dans l'Audit Initial</li>
+                  <li>
+                    Feuille de route priorisée sur 30&nbsp;jours pour améliorer
+                    votre SEO
+                  </li>
+                  <li>Calendrier d'actions et indicateurs à suivre</li>
+                  <li>
+                    Priorisation claire&nbsp;: quoi faire, dans quel ordre,
+                    pourquoi
+                  </li>
+                  <li>
+                    Rapport d'audit en PDF clair et du plan d'action livrés
+                    en&nbsp;3&nbsp;heures
+                  </li>
+                  <li>RDV stratégique de 15&nbsp;min avec un expert en SEO</li>
+                </ul>
+              </div>
+
+              <p class="card-target">
+                <strong>Pour qui&nbsp;?</strong> Dirigeants & équipes qui
+                veulent un plan prêt à exécuter.
+              </p>
+
+              <footer class="card-footer">
+                <div class="stripe-button-wrapper">
+                  <stripe-buy-button
+                    buy-button-id="buy_btn_1RhaCxKnHhVCnenqC00wXffy"
+                    publishable-key="pk_live_51RdRz5KnHhVCnenqbjfF98V5e5ymIXDxsA8ETS1ZxCbezpaKsSpR12OCYbQjZhIj0TnUPhkinJUBaRzjxzgi04Hf00cFqcnJTo"
+                    aria-describedby="trust-note-2"
+                  >
+                  </stripe-buy-button>
+                  <p id="trust-note-2" class="trust-note">
+                    Paiement sécurisé par Stripe
+                  </p>
+                </div>
+              </footer>
+            </article>
+
+            <!-- Carte 3 - Audit Intégration -->
+            <article
+              class="pricing-card"
+              aria-labelledby="title-audit-integration"
+            >
+              <h3
+                id="title-audit-integration"
+                class="card-title h3 title-center"
+              >
+                Audit<br />Intégration
+              </h3>
+
+              <div
+                class="card-pricing"
+                aria-labelledby="title-audit-integration"
+              >
+                <div class="price-container">
+                  <span class="price-prefix">à partir de</span>
+                  <span class="price">399&nbsp;€</span>
+                  <span class="price-period">TTC</span>
+                </div>
+              </div>
+
+              <p class="card-tagline">
+                Diagnostic + Intégration des recommandations
+              </p>
+
+              <div class="card-features">
+                <ul class="features-list">
+                  <li>Mise en œuvre des actions prioritaires</li>
+                  <li>
+                    Amélioration des performances & Core Web Vitals (vitesse du
+                    site)
+                  </li>
+                  <li>
+                    Optimisation titres, balises, contenus images et textes
+                  </li>
+                  <li>
+                    Amélioration de l'ergonomie sur mobile, tablette et PC
+                  </li>
+                  <li>
+                    Renforcement de la popularité (backlinks - liens vers votre
+                    site)
+                  </li>
+                  <li>Suivi 30&nbsp;jours + rapport d'avancement</li>
+                </ul>
+              </div>
+              <p class="card-target">
+                <strong>Pour qui&nbsp;?</strong> Entreprises qui veulent passer
+                à l'action rapidement, accompagnées par des experts en SEO.
+              </p>
+
+              <footer class="card-footer">
+                <div class="button-wrapper">
+                  <a
+                    href="contact.html"
+                    class="btn-dark"
+                    aria-label="Demander un devis pour l'Audit Intégration"
+                  >
+                    Demander un devis
+                  </a>
+                  <p class="trust-note">Devis sur-mesure selon vos besoins.</p>
+                </div>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section Aperçu de l'Audit SEO -->
+      <section id="audit-overview" aria-labelledby="audit-overview-title">
+        <div class="audit-overview-container">
+          <h2 class="h2 audit-overview-title" id="audit-overview-title">
+            Nous auditons de manière exhaustive n'importe quel site web avec
+            plus de <span>100+</span>
+            vérifications.
+          </h2>
+          <div class="audit-categories-grid">
+            <!-- Catégorie 1 - Référencement -->
+            <div class="audit-category-item">
+              <div class="audit-category-icon">
+                <img
+                  src="assets/img/wl-seo.webp"
+                  alt="Référencement SEO"
+                  loading="lazy"
+                  width="80"
+                  height="80"
+                />
+              </div>
+              <h3 class="h3 audit-category-title">Référencement</h3>
+              <p class="audit-category-description">
+                Analyse des balises meta, structure des URLs, optimisation du
+                contenu et respect des bonnes pratiques SEO.
+              </p>
+            </div>
+
+            <!-- Catégorie 2 - Classements -->
+            <div class="audit-category-item">
+              <div class="audit-category-icon">
+                <img
+                  src="assets/img/wl-rankings.webp"
+                  alt="Classements et positions"
+                  loading="lazy"
+                  width="80"
+                  height="80"
+                />
+              </div>
+              <h3 class="h3 audit-category-title">Classements</h3>
+              <p class="audit-category-description">
+                Suivi des positions sur les mots-clés stratégiques et
+                identification des opportunités d'amélioration.
+              </p>
+            </div>
+
+            <!-- Catégorie 3 - Liens -->
+            <div class="audit-category-item">
+              <div class="audit-category-icon">
+                <img
+                  src="assets/img/wl-links.webp"
+                  alt="Analyse des liens"
+                  loading="lazy"
+                  width="80"
+                  height="80"
+                />
+              </div>
+              <h3 class="h3 audit-category-title">Liens</h3>
+              <p class="audit-category-description">
+                Évaluation des liens internes et externes, détection des liens
+                brisés et stratégie de maillage.
+              </p>
+            </div>
+
+            <!-- Catégorie 4 - Convivialité -->
+            <div class="audit-category-item">
+              <div class="audit-category-icon">
+                <img
+                  src="assets/img/wl-usability.webp"
+                  alt="Convivialité et expérience utilisateur"
+                  loading="lazy"
+                  width="80"
+                  height="80"
+                />
+              </div>
+              <h3 class="h3 audit-category-title">Convivialité</h3>
+              <p class="audit-category-description">
+                Analyse de l'expérience utilisateur, navigation, accessibilité
+                et compatibilité mobile.
+              </p>
+            </div>
+
+            <!-- Catégorie 5 - Performance -->
+            <div class="audit-category-item">
+              <div class="audit-category-icon">
+                <img
+                  src="assets/img/wl-performance.webp"
+                  alt="Performance et vitesse"
+                  loading="lazy"
+                  width="80"
+                  height="80"
+                />
+              </div>
+              <h3 class="h3 audit-category-title">Performance</h3>
+              <p class="audit-category-description">
+                Mesure de la vitesse de chargement, optimisation des images et
+                des Core Web Vitals.
+              </p>
+            </div>
+
+            <!-- Catégorie 6 - Réseaux Sociaux -->
+            <div class="audit-category-item">
+              <div class="audit-category-icon">
+                <img
+                  src="assets/img/wl-social.webp"
+                  alt="Réseaux sociaux et partage"
+                  loading="lazy"
+                  width="80"
+                  height="80"
+                />
+              </div>
+              <h3 class="h3 audit-category-title">Réseaux Sociaux</h3>
+              <p class="audit-category-description">
+                Vérification des intégrations sociales, balises Open Graph et
+                optimisation du partage.
+              </p>
+            </div>
+          </div>
+          <container>
+            <!-- Maillage interne -->
+            <nav class="pricing-links" aria-label="Liens utiles">
+              <a href="#faq-section-tarif" class="contact-btn">FAQ</a>
+              <a href="#" class="contact-btn" id="pdf-audit-trigger"
+                >Voir un audit</a
+              >
+              <a href="contact.html#calendly-widget" class="contact-btn"
+                >Parler à un expert</a
+              >
+            </nav>
+          </container>
+        </div>
+      </section>
+
       <!-- Section FAQ -->
       <section
         class="faq-section"
@@ -2062,12 +2081,12 @@
           <h3 class="footer-title">Navigation</h3>
           <ul class="footer-links">
             <li><a href="index.html" class="footer-link">Accueil</a></li>
-            <li><a href="audit-seo.html" class="footer-link">Audit SEO</a></li>
             <li>
               <a href="website.html" class="footer-link"
                 >Création de Site Web</a
               >
             </li>
+            <li><a href="audit-seo.html" class="footer-link">Audit SEO</a></li>
             <li>
               <a href="articles.html" class="footer-link"
                 >Articles de Blog SEO</a

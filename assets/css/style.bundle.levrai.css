@@ -117,10 +117,8 @@
     --container-gap-mobile: 2rem;
     --container-padding-desktop: 5rem 0rem;
     --container-padding-mobile: 2rem 0rem;
-    --header-height: 7rem;
-    --header-height-scrolled: 5rem;
+    --header-height: 5.5rem;
     --header-height-mobile: 5rem;
-    --header-height-mobile-scrolled: 4.5rem;
     --container-padding: 2rem;
 
     /* Breakpoints */
@@ -977,15 +975,9 @@ strong {
     left: 0;
     position: fixed;
     top: 0;
-    transition: box-shadow 0.5s ease, height 0.5s ease;
+    transition: box-shadow 0.5s ease;
     width: 100%;
     z-index: 1000;
-}
-
-/* État réduit au scroll */
-.site-header.is-scrolled {
-    height: var(--header-height-scrolled);
-    box-shadow: 0 2px 20px rgb(0 0 0 / 8%) !important;
 }
 
 .header-content-wrapper {
@@ -993,21 +985,6 @@ strong {
     margin: 0 auto;
     padding: 0 4rem;
     width: 100%;
-    transition: all 0.3s ease;
-}
-
-/* Adaptation des boutons lors du scroll */
-.header-content-wrapper .button,
-.header-content-wrapper .btn-primary,
-.header-content-wrapper .btn-outline {
-    transition: all 0.3s ease;
-}
-
-.site-header.is-scrolled .header-content-wrapper .button,
-.site-header.is-scrolled .header-content-wrapper .btn-primary,
-.site-header.is-scrolled .header-content-wrapper .btn-outline {
-    transform: scale(0.95);
-    padding: 0.6rem 1.2rem;
 }
 
 .site-header.mobile-menu-open {
@@ -1031,7 +1008,7 @@ strong {
 }
 
 .site-logo .logo-image {
-    height: 60px;
+    height: 46px;
     width: auto;
 }
 
@@ -1362,8 +1339,8 @@ strong {
         height: var(--header-height-mobile);
     }
 
-    .site-header.is-scrolled {
-        height: var(--header-height-mobile-scrolled);
+    .main-content {
+        padding-top: var(--header-height-mobile);
     }
 
     .mobile-toggle::before,
@@ -8125,7 +8102,7 @@ body {
     display: flex;
     opacity: 1;
     transform: translateY(0);
-    padding: 3rem;
+    padding: 1rem;
 }
 
 .content-section h3 {
